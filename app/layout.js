@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
               alt="doodle"
               width="100"
               height="100"
-              className="absolute -top-8 -right-8 z-10"
+              className="absolute -top-8 -right-8 z-10 "
             />
             <Navbar />
             {children}

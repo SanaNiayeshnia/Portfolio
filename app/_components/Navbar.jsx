@@ -1,12 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import Hightlighter from "./ui/Hightlighter";
+import { usePathname } from "next/navigation";
 
 function Navbar() {
+  const pathname = usePathname();
   const navItems = [
+    { name: "Home", href: "/" },
+    { name: "Projects", href: "/projects" },
     { name: "About", href: "/about" },
-    { name: "Portfolio", href: "/portfolio", highlight: true },
     { name: "Hire Me //", href: "/hire me" },
   ];
+
   return (
     <div className="flex sticky top-5 bg-white shadow-strict  items-center gap-8 justify-between border-3 w-max mx-auto z-10">
       <p className="flex items-center gap-2 py-2 px-2">
@@ -18,12 +24,23 @@ function Navbar() {
         />
         <span className="font-semibold text-xl">Sana's Portfolio</span>
       </p>
-      <ul className="flex items-center font-medium divide-x-3">
+      <ul className="flex items-center font-medium divide-x-3 !divide-black">
         {navItems?.map((item, index) => (
-          <li key={index} className="py-3 px-2">
-            <p className="relative">
+          <li
+            key={index}
+            className={`py-2 px-2 group transition-all duration-300 ${
+              pathname !== item?.href ? "cursor-pointer " : ""
+            } `}
+          >
+            <p
+              className={`relative border-b-3 border-transparent  transition-all duration-300 ${
+                pathname !== item?.href ? "group-hover:border-amber-200" : ""
+              }`}
+            >
               {item?.name}
-              {item?.highlight && <Hightlighter className="bg-amber-200" />}
+              {pathname === item?.href && (
+                <Hightlighter className="bg-amber-200" />
+              )}
             </p>
           </li>
         ))}

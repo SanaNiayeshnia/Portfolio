@@ -22,9 +22,13 @@ function SkillsSlider() {
     <Swiper
       spaceBetween={5}
       slidesPerView={5}
-      className="bg-black !-z-10 [&_.swipper-wrapper]:!-z-10"
+      className="bg-black cursor-grab mt-20 [&_.swipper-wrapper]:!-z-10"
       modules={[Autoplay]}
-      autoplay={{ delay: 3000 }}
+      autoplay={{
+        delay: 3000,
+        disableOnInteraction: true,
+        pauseOnMouseEnter: true,
+      }}
       loop
     >
       {skills?.map((skill, index) => (

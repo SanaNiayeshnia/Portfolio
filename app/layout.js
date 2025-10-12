@@ -27,9 +27,9 @@ export default function RootLayout({ children }) {
         className={`${grotesk?.className} ${caveat?.variable} ${grotesk?.variable} bg-[#fefff0ee] antialiased`}
       >
         <div className="max-w-7xl px-6 mx-auto h-full">
-          <div className="min-h-screen h-full px-4 py-6 bg-no-repeat bg-cover bg-[url(/images/bg-mobile.png)] sm:bg-[url(/images/bg.png)] relative">
+          <div className="min-h-screen h-full  py-6 bg-no-repeat bg-cover bg-[url(/images/bg-mobile.png)] sm:bg-[url(/images/bg.png)] relative">
             <Image
-              src="/images/doodles/doodle19.png"
+              src="/images/doodles/doodle21.png"
               alt="doodle"
               width="100"
               height="100"

@@ -4,7 +4,7 @@ import Button from "../ui/Button";
 
 function HomeBio() {
   return (
-    <div className="flex flex-row-reverse items-center gap-8 justify-center">
+    <div className="flex px-4 flex-row-reverse items-center gap-8 justify-center">
       <div className="max-w-96 flex flex-col gap-2">
         <Image
           src="/images/doodles/doodle5.png"

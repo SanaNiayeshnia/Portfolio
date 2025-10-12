@@ -10,7 +10,7 @@
   --color-foreground: var(--foreground);
   --font-grotesk: var(--font-grotesk);
   --font-caveat: var(--font-caveat);
-  --shadow-strict: 4px 4px 0 0 rgba(0, 0, 0, 0.25);
+  --shadow-strict: -4px 4px 0 0 rgba(0, 0, 0, 0.25);
 }
 
 @media (prefers-color-scheme: dark) {

@@ -14,7 +14,7 @@ function Navbar() {
   ];
 
   return (
-    <div className="flex sticky top-5 bg-white shadow-strict  items-center gap-8 justify-between border-3 w-max mx-auto z-10">
+    <div className="flex sticky top-5 bg-white shadow-strict  items-center gap-8 justify-between border-3 w-max mx-auto z-20">
       <p className="flex items-center gap-2 py-2 px-2">
         <Image
           src="/images/doodles/doodle20.png"
@@ -45,8 +45,8 @@ function Navbar() {
           </li>
         ))}
       </ul>
-      <div className="size-2 border-2 absolute bg-white -top-1.5 -left-1.5"></div>
-      <div className="size-2 shadow-strict border-2 absolute bg-white -top-1.5 -right-1.5"></div>
+      <div className="size-2 shadow-strict border-2 absolute bg-white -top-1.5 -left-1.5"></div>
+      <div className="size-2 border-2 absolute bg-white -top-1.5 -right-1.5"></div>
       <div className="size-2 shadow-strict border-2 absolute bg-white -bottom-1.5 -left-1.5"></div>
       <div className="size-2 shadow-strict border-2 absolute bg-white -bottom-1.5 -right-1.5"></div>
     </div>

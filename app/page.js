@@ -1,6 +1,7 @@
 import Image from "next/image";
 import HomeBio from "./_components/home/HomeBio";
 import SkillsSlider from "./_components/home/SkillsSlider";
+import HomeServices from "./_components/home/HomeServices";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         className="-ml-2 -mb-5 z-10 rotate-30"
       />
       <SkillsSlider />
+      <HomeServices />
     </div>
   );
 }

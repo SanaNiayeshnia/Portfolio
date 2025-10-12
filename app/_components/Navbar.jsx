@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Hightlighter from "./ui/Hightlighter";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 function Navbar() {
   const pathname = usePathname();
@@ -15,7 +16,7 @@ function Navbar() {
 
   return (
     <div className="flex sticky top-5 bg-white shadow-strict  items-center gap-8 justify-between border-3 w-max mx-auto z-20">
-      <p className="flex items-center gap-2 py-2 px-2">
+      <Link href="/" className="flex items-center gap-2 py-2 px-2">
         <Image
           src="/images/doodles/doodle20.png"
           alt="doodle"
@@ -23,7 +24,7 @@ function Navbar() {
           height="30"
         />
         <span className="font-semibold text-xl">Sana's Portfolio</span>
-      </p>
+      </Link>
       <ul className="flex items-center font-medium divide-x-3 !divide-black">
         {navItems?.map((item, index) => (
           <li

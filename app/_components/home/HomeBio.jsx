@@ -4,7 +4,7 @@ import Button from "../ui/Button";
 
 function HomeBio() {
   return (
-    <div className="flex px-10 flex-row-reverse items-center gap-8 justify-center">
+    <section className="flex px-10 flex-row-reverse items-center gap-8 justify-center">
       <div className="max-w-96 flex flex-col gap-2">
         <Image
           src="/images/doodles/doodle5.png"
@@ -52,7 +52,7 @@ function HomeBio() {
           className="absolute bottom-0 right-0"
         />
       </div>
-    </div>
+    </section>
   );
 }
 

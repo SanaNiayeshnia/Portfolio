@@ -2,10 +2,11 @@ import Image from "next/image";
 import HomeBio from "./_components/home/HomeBio";
 import SkillsSlider from "./_components/home/SkillsSlider";
 import HomeServices from "./_components/home/HomeServices";
+import HomeWorkExperiences from "./_components/home/HomeWorkExperiences";
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <Image
         src="/images/doodles/doodle19.png"
         alt="doodle"
@@ -16,6 +17,7 @@ export default function Home() {
       <HomeBio />
       <SkillsSlider />
       <HomeServices />
+      <HomeWorkExperiences />
     </div>
   );
 }

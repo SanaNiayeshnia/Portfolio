@@ -1,85 +1,86 @@
 import Image from "next/image";
 import Hightlighter from "../ui/Hightlighter";
 
+const services = [
+  {
+    title: "Core Web",
+    description: (
+      <>
+        HTML, CSS, SASS, and{" "}
+        <span className="relative">
+          Responsive Design
+          <Hightlighter className="bg-pink-200" />
+        </span>{" "}
+        — the essentials that shape every beautiful, accessible interface
+      </>
+    ),
+    icon: "/images/doodles/doodle11.png",
+  },
+  {
+    title: "Frameworks & Libraries",
+    description: (
+      <>
+        JavaScript,{" "}
+        <span className="relative">
+          TypeScript
+          <Hightlighter className="bg-green-200" />
+        </span>
+        , React, and{" "}
+        <span className="relative">
+          Next.js
+          <Hightlighter className="bg-amber-200" />
+        </span>{" "}
+        — the engines behind interactive and scalable web apps
+      </>
+    ),
+    icon: "/images/doodles/doodle8.png",
+  },
+  {
+    title: "Styling Systems",
+    description: (
+      <>
+        <span className="relative">
+          Tailwind CSS
+          <Hightlighter className="bg-sky-200" />
+        </span>
+        , Material UI,{" "}
+        <span className="relative">
+          Shadcn UI
+          <Hightlighter className="bg-amber-200" />
+        </span>
+        , Styled Components, and Bootstrap — crafting consistent, modern, and
+        responsive designs
+      </>
+    ),
+    icon: "/images/doodles/doodle9.png",
+  },
+  {
+    title: "Workflow & Extras",
+    description: (
+      <>
+        Git & GitHub, NPM,{" "}
+        <span className="relative">
+          RESTful APIs
+          <Hightlighter className="bg-pink-200" />
+        </span>
+        , and{" "}
+        <span className="relative">
+          PWA
+          <Hightlighter className="bg-green-200" />
+        </span>{" "}
+        — tools that power efficient development and smooth user experiences
+      </>
+    ),
+    icon: "/images/doodles/doodle10.png",
+  },
+];
+
 function HomeServices() {
-  const services = [
-    {
-      title: "Core Web",
-      description: (
-        <>
-          HTML, CSS, SASS, and{" "}
-          <span className="relative">
-            Responsive Design
-            <Hightlighter className="bg-pink-200" />
-          </span>{" "}
-          — the essentials that shape every beautiful, accessible interface
-        </>
-      ),
-      icon: "/images/doodles/doodle11.png",
-    },
-    {
-      title: "Frameworks & Libraries",
-      description: (
-        <>
-          JavaScript,{" "}
-          <span className="relative">
-            TypeScript
-            <Hightlighter className="bg-green-200" />
-          </span>
-          , React, and{" "}
-          <span className="relative">
-            Next.js
-            <Hightlighter className="bg-amber-200" />
-          </span>{" "}
-          — the engines behind interactive and scalable web apps
-        </>
-      ),
-      icon: "/images/doodles/doodle8.png",
-    },
-    {
-      title: "Styling Systems",
-      description: (
-        <>
-          <span className="relative">
-            Tailwind CSS
-            <Hightlighter className="bg-sky-200" />
-          </span>
-          , Material UI,{" "}
-          <span className="relative">
-            Shadcn UI
-            <Hightlighter className="bg-amber-200" />
-          </span>
-          , Styled Components, and Bootstrap — crafting consistent, modern, and
-          responsive designs
-        </>
-      ),
-      icon: "/images/doodles/doodle9.png",
-    },
-    {
-      title: "Workflow & Extras",
-      description: (
-        <>
-          Git & GitHub, NPM,{" "}
-          <span className="relative">
-            RESTful APIs
-            <Hightlighter className="bg-pink-200" />
-          </span>
-          , and{" "}
-          <span className="relative">
-            PWA
-            <Hightlighter className="bg-green-200" />
-          </span>{" "}
-          — tools that power efficient development and smooth user experiences
-        </>
-      ),
-      icon: "/images/doodles/doodle10.png",
-    },
-  ];
   return (
-    <div className="pl-20 mt-15">
-      <div className="flex items-center gap-1 max-w-96 mb-10">
-        <h2 className="font-semibold text-2xl">
-          Services we’re providing that derive 99% result
+    <section className="pl-20 mt-15">
+      <div className="flex items-center gap-2 max-w-96 mb-10">
+        <h2 className="font-semibold text-5xl font-caveat">
+          Services I'm providing that derive 99% result
         </h2>
         <Image
           src="/images/doodles/doodle7.png"
@@ -109,7 +110,7 @@ function HomeServices() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

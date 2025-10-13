@@ -5,19 +5,20 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 
+const skills = [
+  "Clean-code enthusiast",
+  "Design-aware developer",
+  "Component thinker",
+  "Problem untangler",
+  "Accessibility advocate",
+  "Performance chaser",
+  "Clear communicator",
+  "Detail detective",
+  "Refactor lover",
+  "Team player",
+];
+
 function SkillsSlider() {
-  const skills = [
-    "Clean-code enthusiast",
-    "Design-aware developer",
-    "Component thinker",
-    "Problem untangler",
-    "Accessibility advocate",
-    "Performance chaser",
-    "Clear communicator",
-    "Detail detective",
-    "Refactor lover",
-    "Team player",
-  ];
   return (
     <Swiper
       spaceBetween={5}
@@ -26,7 +27,6 @@ function SkillsSlider() {
       modules={[Autoplay]}
       autoplay={{
         delay: 3000,
-        disableOnInteraction: true,
         pauseOnMouseEnter: true,
       }}
       loop

@@ -38,7 +38,7 @@ function HomeWorkExperiences() {
               <p
                 className={` border-2 ${
                   colorClasses?.[colors?.[index]]
-                } pl-7 pr-8 rounded-md py-4 font-bold font-caveat text-4xl`}
+                } pl-7 pr-9 rounded-md py-4 font-bold font-caveat text-5xl`}
               >
                 {index + 1}
               </p>
@@ -62,18 +62,18 @@ function HomeWorkExperiences() {
         <div className="border-t-3 border-l-3 -mt-0.5 -ml-[2.5px]"></div>
       </div>
       <div className="flex flex-col">
-        <div className="flex gap-2 items-center self-end">
+        <div className="flex gap-2 items-center self-end -mr-15">
           <Image
             src="/images/doodles/doodle25.png"
             alt="doodle"
-            width="40"
-            height="40"
+            width="35"
+            height="35"
           />
           <Image
             src="/images/doodles/doodle26.png"
             alt="doodle"
-            width="100"
-            height="40"
+            width="90"
+            height="30"
             className="-mt-8"
           />
         </div>

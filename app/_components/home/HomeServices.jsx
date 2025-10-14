@@ -77,8 +77,8 @@ const services = [
 
 function HomeServices() {
   return (
-    <section className="pl-20 mt-15">
-      <div className="flex items-center gap-2 max-w-96 mb-10">
+    <section className="pl-20 mt-15 flex flex-col">
+      <div className="flex items-center gap-2 max-w-96 ">
         <h2 className="font-semibold text-5xl font-caveat">
           Services I'm providing that derive 99% result
         </h2>
@@ -90,6 +90,13 @@ function HomeServices() {
           className="shrink-0"
         />
       </div>
+      <Image
+        src="/images/doodles/doodle22.png"
+        alt="doodel"
+        width="100"
+        height="100"
+        className="rotate-30 self-end -mb-10 -mr-5"
+      />
       <div className="border-t-3  grid grid-cols-[0.5fr_1fr_1fr] grid-rows-4">
         <div className="px-4 py-6 border-b-3">
           <h4 className="font-semibold text-xl">39</h4>

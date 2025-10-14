@@ -3,6 +3,7 @@ import HomeBio from "./_components/home/HomeBio";
 import SkillsSlider from "./_components/home/SkillsSlider";
 import HomeServices from "./_components/home/HomeServices";
 import HomeWorkExperiences from "./_components/home/HomeWorkExperiences";
+import HomeEducation from "./_components/home/HomeEducation";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       />
       <HomeBio />
       <SkillsSlider />
+      <HomeEducation />
       <HomeServices />
       <HomeWorkExperiences />
     </div>

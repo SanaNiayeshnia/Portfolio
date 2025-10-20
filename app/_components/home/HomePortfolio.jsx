@@ -31,13 +31,26 @@ function HomePortfolio() {
 
       <Swiper
         spaceBetween={10}
-        slidesPerView={3}
+        slidesPerView={1}
         modules={[Autoplay]}
         autoplay={{
           delay: 3000,
           pauseOnMouseEnter: true,
         }}
         loop
+        breakpoints={{
+          1024: {
+            slidesPerView: 3,
+          },
+          850: { slidesPerView: 2.8 },
+          768: { slidesPerView: 2.5 },
+          640: {
+            slidesPerView: 2,
+          },
+          400: {
+            slidesPerView: 1.5,
+          },
+        }}
       >
         {projects?.map((project, index) => (
           <SwiperSlide key={index}>

@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${grotesk?.className} ${caveat?.variable} ${grotesk?.variable} bg-[#fefff0ee] antialiased `}
       >
-        <main className="max-w-7xl  bg-no-repeat bg-cover bg-[url(/images/bg-mobile.png)] sm:bg-[url(/images/bg.png)] border-l-3 min-h-screen pt-6 pb-30 relative mx-auto h-full">
+        <main className="max-w-7xl overflow-x-hidden xl:overflow-x-visible  bg-no-repeat bg-cover bg-[url(/images/bg-mobile.png)] sm:bg-[url(/images/bg.png)] xl:border-l-3 min-h-screen pt-6 pb-30 relative mx-auto h-full">
           <Image
             src="/images/doodles/doodle21.png"
             alt="doodle"
@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
             height="100"
             className="absolute -top-8 -right-8 z-10 "
           />
-          <Navbar />
+          {/* <Navbar /> */}
           {children}
         </main>
         <Footer />

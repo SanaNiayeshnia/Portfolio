@@ -22,7 +22,7 @@ function SkillsSlider() {
   return (
     <Swiper
       spaceBetween={5}
-      slidesPerView={5}
+      slidesPerView={1.5}
       className="bg-black cursor-grab mt-20 [&_.swipper-wrapper]:!-z-10"
       modules={[Autoplay]}
       autoplay={{
@@ -30,6 +30,26 @@ function SkillsSlider() {
         pauseOnMouseEnter: true,
       }}
       loop
+      breakpoints={{
+        1280: {
+          slidesPerView: 5,
+        },
+        1024: {
+          slidesPerView: 4.5,
+        },
+        860: { slidesPerView: 4 },
+        640: { slidesPerView: 3 },
+        530: {
+          slidesPerView: 2.5,
+        },
+        430: {
+          slidesPerView: 2,
+        },
+
+        390: {
+          slidesPerView: 1.8,
+        },
+      }}
     >
       {skills?.map((skill, index) => (
         <SwiperSlide

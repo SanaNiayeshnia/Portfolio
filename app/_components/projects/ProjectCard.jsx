@@ -7,7 +7,7 @@ function ProjectCard({ project = {} }) {
     <div className="aspect-square flex flex-col gap-3 px-10 py-9">
       <Image fill alt="doodle" src="/images/doodles/doodle14.png" />
       <div className="z-1 flex flex-col gap-4 justify-center">
-        <div className="relative min-h-50 border-4">
+        <div className="relative min-h-40 xl:min-h-50 border-4">
           <Image
             alt={`${project.title}`}
             src={project.img}

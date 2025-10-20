@@ -26,7 +26,7 @@ const colorClasses = {
 
 function HomeWorkExperiences() {
   return (
-    <section className="flex items-center gap-6 mt-30">
+    <section className="flex mt-30">
       <div className="grid grid-cols-[0.5fr_10fr_0.5fr] grid-rows-[0.8fr_10fr_0.8fr] divide-2 divide-black w-3/5 min-h-[450px]">
         <div className="border-r-3 border-b-3 -mr-0.5 -mb-[2.5px]"></div>
         <div></div>
@@ -61,32 +61,34 @@ function HomeWorkExperiences() {
         <div></div>
         <div className="border-t-3 border-l-3 -mt-0.5 -ml-[2.5px]"></div>
       </div>
-      <div className="flex flex-col">
-        <div className="flex gap-2 items-center self-end -mr-15">
+      <div className="flex-grow py-[31px]">
+        <div className="flex flex-col justify-center border-y-3 border-t-transparent h-full">
+          <div className="flex gap-2 items-center justify-center">
+            <Image
+              src="/images/doodles/doodle25.png"
+              alt="doodle"
+              width="35"
+              height="35"
+            />
+            <Image
+              src="/images/doodles/doodle26.png"
+              alt="doodle"
+              width="90"
+              height="30"
+              className="-mt-8"
+            />
+          </div>
+          <h2 className="text-5xl mt-5 font-caveat w-max font-semibold bg-pink-200">
+            Work Experience
+          </h2>
           <Image
-            src="/images/doodles/doodle25.png"
+            src="/images/doodles/doodle2.png"
             alt="doodle"
-            width="35"
-            height="35"
-          />
-          <Image
-            src="/images/doodles/doodle26.png"
-            alt="doodle"
-            width="90"
-            height="30"
-            className="-mt-8"
+            width="50"
+            height="50"
+            className="rotate-90"
           />
         </div>
-        <h2 className="text-5xl mt-5 font-caveat font-semibold bg-pink-200">
-          Work Experience
-        </h2>
-        <Image
-          src="/images/doodles/doodle2.png"
-          alt="doodle"
-          width="50"
-          height="50"
-          className="rotate-90"
-        />
       </div>
     </section>
   );

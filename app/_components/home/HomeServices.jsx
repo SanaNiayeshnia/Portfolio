@@ -77,8 +77,8 @@ const services = [
 
 function HomeServices() {
   return (
-    <section className="pl-20 mt-15 flex flex-col">
-      <div className="flex items-center gap-2 max-w-96 ">
+    <section className="px-5 md:pr-0 md:pl-15 lg:pl-20 mt-30 md:mt-20 flex flex-col">
+      <div className="flex items-center  gap-3 sm:max-w-96 ">
         <h2 className="font-semibold text-5xl font-caveat">
           Services I'm providing that derive 99% result
         </h2>
@@ -97,19 +97,19 @@ function HomeServices() {
         height="100"
         className="rotate-30 self-end -mb-10 -mr-5"
       />
-      <div className="border-t-3  grid grid-cols-[0.5fr_1fr_1fr] grid-rows-4">
-        <div className="px-4 py-6 border-b-3">
+      <div className="border-t-3 border-3 md:border-x-0 md:border-b-0 grid grid-cols-1 md:grid-cols-[0.5fr_1fr_1fr] grid-rows-4 divide-y-3">
+        <div className="px-4 py-6 md:border-b-3">
           <h4 className="font-semibold text-xl">39</h4>
           <p className="font-medium">projects</p>
         </div>
-        <div className="row-start-2 -row-end-1 px-4 py-6 border-b-3">
+        <div className="md:row-start-2 md:-row-end-1 px-4 py-6 md:border-b-3">
           <h4 className="font-semibold text-xl">3+ Years</h4>
           <p className="font-medium">of Front-end Expreience</p>
         </div>
         {services?.map((service, index) => (
           <div
             key={index}
-            className="row-span-2 px-4 py-6 space-y-2 border-b-3 border-l-3"
+            className="row-span-2 px-4 py-6 space-y-2 md:border-b-3 md:border-l-3"
           >
             <Image src={service?.icon} alt="doodle" width="45" height="45" />
             <h4 className="font-semibold text-xl">{service?.title}</h4>

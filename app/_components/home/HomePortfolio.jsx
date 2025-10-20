@@ -10,8 +10,8 @@ import ProjectCard from "../projects/ProjectCard";
 
 function HomePortfolio() {
   return (
-    <section className="mt-10 px-5 md:px-10">
-      <div className="flex items-center gap-4 justify-center mb-10">
+    <section className="mt-30 sm:mt-20 px-5 md:px-10">
+      <div className="flex items-center gap-4 justify-center mb-5">
         <div className="flex gap-2 text-4xl md:text-5xl font-bold ">
           My{" "}
           <p className="flex flex-col">

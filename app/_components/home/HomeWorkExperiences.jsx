@@ -1,21 +1,7 @@
+import { workExperiences } from "@/app/_lib/db";
 import { formatDate } from "@/app/_lib/utils";
 import Image from "next/image";
-const workExperiences = [
-  {
-    role: "WordPress Designer",
-    company: "Raei Institute",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    startDate: new Date("2023-11-01T00:00:00.000Z"),
-    endDate: new Date("2024-06-01T00:00:00.000Z"),
-  },
-  {
-    role: "Front-end Developer",
-    company: "Vira Segal Karo",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    startDate: new Date("2024-09-26T00:00:00.000Z"),
-    endDate: new Date("2025-09-22T00:00:00.000Z"),
-  },
-];
+
 const colors = ["green", "sky", "pink", "amber"];
 const colorClasses = {
   green: "bg-green-200 ",
@@ -26,19 +12,19 @@ const colorClasses = {
 
 function HomeWorkExperiences() {
   return (
-    <section className="flex mt-30">
-      <div className="grid grid-cols-[0.5fr_10fr_0.5fr] grid-rows-[0.8fr_10fr_0.8fr] divide-2 divide-black w-3/5 min-h-[450px]">
-        <div className="border-r-3 border-b-3 -mr-0.5 -mb-[2.5px]"></div>
+    <section className="flex flex-col-reverse gap-5 sm:gap-0 md:flex-row mt-30">
+      <div className="sm:grid grid-cols-[0.5fr_10fr_0.5fr] grid-rows-[0.8fr_10fr_0.8fr] divide-2 divide-black md:w-9/12 xl:w-3/5 sm:min-h-[450px] shrink-0">
+        <div className="border-r-3 border-b-3 -mr-0.5 -mb-[2.5px] hidden sm:block"></div>
         <div></div>
-        <div className="border-b-3 border-l-3 -mb-[2.5px] -ml-[2.5px]"></div>
+        <div className="border-b-3 border-l-3 -mb-[2.5px] -ml-[2.5px] hidden sm:block"></div>
         <div></div>
-        <div className="border-3 px-10 py-10 flex flex-col justify-center gap-6">
+        <div className="border-y-3 sm:border-x-3 p-5 lg:p-10 flex flex-col justify-center gap-6">
           {workExperiences?.map((experience, index) => (
-            <div key={index} className="flex items-center gap-4">
+            <div key={index} className="flex gap-4">
               <p
-                className={` border-2 ${
+                className={`border-2 ${
                   colorClasses?.[colors?.[index]]
-                } pl-7 pr-9 rounded-md py-4 font-bold font-caveat text-5xl`}
+                } pl-5 pr-7 md:pl-7 md:pr-9 rounded-md py-2 md:py-4 font-bold font-caveat text-5xl flex justify-center items-center`}
               >
                 {index + 1}
               </p>
@@ -57,12 +43,12 @@ function HomeWorkExperiences() {
           ))}
         </div>
         <div></div>
-        <div className="border-t-3 border-r-3 -mt-0.5 -mr-0.5"></div>
+        <div className="border-t-3 border-r-3 -mt-0.5 -mr-0.5 hidden sm:block"></div>
         <div></div>
-        <div className="border-t-3 border-l-3 -mt-0.5 -ml-[2.5px]"></div>
+        <div className="border-t-3 border-l-3 -mt-0.5 -ml-[2.5px] hidden sm:block"></div>
       </div>
-      <div className="flex-grow py-[31px]">
-        <div className="flex flex-col justify-center border-y-3 border-t-transparent h-full">
+      <div className="flex-grow md:py-7.5">
+        <div className="flex flex-col items-center md:items-stretch justify-center md:border-y-3 border-t-transparent h-full">
           <div className="flex gap-2 items-center justify-center">
             <Image
               src="/images/doodles/doodle25.png"
@@ -78,8 +64,9 @@ function HomeWorkExperiences() {
               className="-mt-8"
             />
           </div>
-          <h2 className="text-5xl mt-5 font-caveat w-max font-semibold bg-pink-200">
-            Work Experience
+          <h2 className="text-5xl mt-5 lg:mt-0 font-caveat w-max font-semibold gap-2 bg-pink-200 md:bg-transparent md:[&_span]:bg-pink-200 flex md:flex-col items-start">
+            <span>Work</span>
+            <span>Experience</span>
           </h2>
           <Image
             src="/images/doodles/doodle2.png"

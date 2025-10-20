@@ -19,9 +19,9 @@ export default function Home() {
       <HomeBio />
       <SkillsSlider />
       <HomeEducation />
-      {/* <HomeServices />
+      <HomeServices />
       <HomeWorkExperiences />
-      <HomePortfolio /> */}
+      <HomePortfolio />
     </div>
   );
 }

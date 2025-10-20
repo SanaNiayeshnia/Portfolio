@@ -10,9 +10,9 @@ import ProjectCard from "../projects/ProjectCard";
 
 function HomePortfolio() {
   return (
-    <section className="mt-10 px-10">
+    <section className="mt-10 px-5 md:px-10">
       <div className="flex items-center gap-4 justify-center mb-10">
-        <div className="flex gap-2 text-5xl font-bold ">
+        <div className="flex gap-2 text-4xl md:text-5xl font-bold ">
           My{" "}
           <p className="flex flex-col">
             <span>Portfolio</span>
@@ -47,7 +47,7 @@ function HomePortfolio() {
           640: {
             slidesPerView: 2,
           },
-          400: {
+          550: {
             slidesPerView: 1.5,
           },
         }}

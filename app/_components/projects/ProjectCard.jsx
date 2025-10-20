@@ -21,7 +21,7 @@ function ProjectCard({ project = {} }) {
               {project?.title}
             </h3>
             <Link href={project?.link}>
-              <TbArrowUpRight className="text-2xl bg-black rounded active:bg-amber-200 active:text-black hover:bg-amber-200 hover:text-black  transition-all duration-300 text-white shadow-strict" />
+              <TbArrowUpRight className="text-2xl bg-black border-2 border-black rounded active:bg-amber-200 active:text-black hover:bg-amber-200 hover:text-black  transition-all duration-300 text-white shadow-strict" />
             </Link>
           </div>
           <p className="text-justify font-medium line-clamp-3">

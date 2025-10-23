@@ -1,8 +1,8 @@
 import { Caveat, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import Navbar from "./_components/Navbar";
 import Image from "next/image";
-import Footer from "./_components/Footer";
+import Navbar from "./_components/ui/navbar/Navbar";
+import Footer from "./_components/ui/Footer";
 
 const grotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -27,16 +27,18 @@ export default function RootLayout({ children }) {
       <body
         className={`${grotesk?.className} ${caveat?.variable} ${grotesk?.variable} bg-[#fefff0ee] antialiased `}
       >
-        <main className="max-w-7xl overflow-x-hidden xl:overflow-x-visible  bg-no-repeat bg-cover bg-[url(/images/bg-mobile.png)] sm:bg-[url(/images/bg.png)] xl:border-l-3 min-h-screen pt-6 pb-30 relative mx-auto h-full">
-          <Image
-            src="/images/doodles/doodle21.png"
-            alt="doodle"
-            width="100"
-            height="100"
-            className="absolute -top-8 -right-8 z-10 "
-          />
-          {/* <Navbar /> */}
-          {children}
+        <main className="max-w-7xl  bg-no-repeat bg-cover bg-[url(/images/bg-mobile.png)] sm:bg-[url(/images/bg.png)] xl:border-l-3 min-h-screen pb-30 mx-auto h-full">
+          <Navbar />
+          <div className="overflow-x-hidden pt-8 xl:overflow-x-visible relative">
+            <Image
+              src="/images/doodles/doodle21.png"
+              alt="doodle"
+              width="100"
+              height="100"
+              className="absolute -top-8 -right-8 z-10 "
+            />
+            {children}
+          </div>
         </main>
         <Footer />
       </body>

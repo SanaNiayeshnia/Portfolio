@@ -1,9 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
-function Logo() {
+function Logo({ className = "" }) {
   return (
-    <Link href="/" className="flex items-center gap-2 py-2 px-2">
+    <Link
+      href="/"
+      className={`flex items-center gap-2 py-2 px-2 shrink-0 ${className}`}
+    >
       <Image
         src="/images/doodles/doodle20.png"
         alt="doodle"

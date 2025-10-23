@@ -1,9 +1,17 @@
+"use client";
 import NavItem from "./NavItem";
+import {
+  PiShootingStarFill,
+  PiPaletteFill,
+  PiStarFourFill,
+  PiButterflyFill,
+} from "react-icons/pi";
+
 const navItems = [
-  { name: "Home", href: "/" },
-  { name: "Projects", href: "/projects" },
-  { name: "About", href: "/about" },
-  { name: "Hire Me //", href: "/hire me" },
+  { name: "Home", href: "/", icon: PiStarFourFill },
+  { name: "Projects", href: "/projects", icon: PiPaletteFill },
+  { name: "About", href: "/about", icon: PiButterflyFill },
+  { name: "Hire Me //", href: "/hire me", icon: PiShootingStarFill },
 ];
 
 function NavItems() {

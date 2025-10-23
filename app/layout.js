@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${grotesk?.className} ${caveat?.variable} ${grotesk?.variable} bg-[#fefff0ee] antialiased `}
       >
-        <main className="max-w-7xl  bg-no-repeat bg-cover bg-[url(/images/bg-mobile.png)] sm:bg-[url(/images/bg.png)] xl:border-l-3 min-h-screen pb-30 mx-auto h-full">
+        <main className="max-w-7xl  bg-no-repeat bg-cover bg-[url(/images/bg-mobile.png)] sm:bg-[url(/images/bg.png)] xl:border-l-3 min-h-screen mx-auto h-full">
           <Navbar />
           <div className="overflow-x-hidden pt-8 xl:overflow-x-visible relative">
             <Image

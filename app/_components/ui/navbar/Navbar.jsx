@@ -3,7 +3,7 @@ import Logo from "../Logo";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
+  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -28,6 +28,11 @@ function Navbar() {
           <div className="px-4">
             <NavItems />
           </div>
+          <SheetFooter>
+            <p className="text-center font-caveat text-xl font-medium">
+              You found the secret spot!
+            </p>
+          </SheetFooter>
         </SheetContent>
       </Sheet>
       <div className="size-2 border-black shadow-strict border-2 absolute bg-white -top-1.5 -left-1.5"></div>

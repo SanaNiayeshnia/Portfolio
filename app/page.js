@@ -5,6 +5,7 @@ import HomeServices from "./_components/home/HomeServices";
 import HomeWorkExperiences from "./_components/home/HomeWorkExperiences";
 import HomeEducation from "./_components/home/HomeEducation";
 import HomePortfolio from "./_components/home/HomePortfolio";
+import HighLighter from "./_components/ui/Highlighter";
 
 export default function Home() {
   return (
@@ -22,6 +23,13 @@ export default function Home() {
       <HomeServices />
       <HomeWorkExperiences />
       <HomePortfolio />
+      <p className="font-caveat text-center text-2xl font-semibold px-10 pt-30 pb-5">
+        You’re still here? Must be{" "}
+        <span className="relative uppercase">
+          fate
+          <HighLighter className="bg-blue-200" />
+        </span>
+      </p>
     </div>
   );
 }

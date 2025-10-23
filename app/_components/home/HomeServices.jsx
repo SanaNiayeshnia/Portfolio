@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Hightlighter from "../ui/Hightlighter";
+import HighLighter from "../ui/Highlighter";
 
 const services = [
   {
@@ -9,7 +9,7 @@ const services = [
         HTML, CSS, SASS, and{" "}
         <span className="relative">
           Responsive Design
-          <Hightlighter className="bg-pink-200" />
+          <HighLighter className="bg-pink-200" />
         </span>{" "}
         — the essentials that shape every beautiful, accessible interface
       </>
@@ -23,12 +23,12 @@ const services = [
         JavaScript,{" "}
         <span className="relative">
           TypeScript
-          <Hightlighter className="bg-green-200" />
+          <HighLighter className="bg-green-200" />
         </span>
         , React, and{" "}
         <span className="relative">
           Next.js
-          <Hightlighter className="bg-amber-200" />
+          <HighLighter className="bg-amber-200" />
         </span>{" "}
         — the engines behind interactive and scalable web apps
       </>
@@ -41,12 +41,12 @@ const services = [
       <>
         <span className="relative">
           Tailwind CSS
-          <Hightlighter className="bg-sky-200" />
+          <HighLighter className="bg-sky-200" />
         </span>
         , Material UI,{" "}
         <span className="relative">
           Shadcn UI
-          <Hightlighter className="bg-amber-200" />
+          <HighLighter className="bg-amber-200" />
         </span>
         , Styled Components, and Bootstrap — crafting consistent, modern, and
         responsive designs
@@ -61,12 +61,12 @@ const services = [
         Git & GitHub, NPM,{" "}
         <span className="relative">
           RESTful APIs
-          <Hightlighter className="bg-pink-200" />
+          <HighLighter className="bg-pink-200" />
         </span>
         , and{" "}
         <span className="relative">
           PWA
-          <Hightlighter className="bg-green-200" />
+          <HighLighter className="bg-green-200" />
         </span>{" "}
         — tools that power efficient development and smooth user experiences
       </>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Hightlighter from "../ui/Hightlighter";
+import HighLighter from "../ui/Highlighter";
 import Button from "../ui/Button";
 
 function HomeBio() {
@@ -18,18 +18,18 @@ function HomeBio() {
           A{" "}
           <span className="relative">
             front-end developer
-            <Hightlighter className="bg-blue-200" />
+            <HighLighter className="bg-blue-200" />
           </span>{" "}
           who turns creative ideas into friendly, interactive websites. My goal?
           Make every{" "}
           <span className="relative">
             click
-            <Hightlighter className="bg-amber-200" />
+            <HighLighter className="bg-amber-200" />
           </span>{" "}
           feel like a{" "}
           <span className="relative">
             high-five
-            <Hightlighter className="bg-pink-200" />
+            <HighLighter className="bg-pink-200" />
           </span>
           .
         </p>

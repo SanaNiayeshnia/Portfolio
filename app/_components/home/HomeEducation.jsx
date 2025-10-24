@@ -1,3 +1,4 @@
+import { languages } from "@/app/_lib/db";
 import Image from "next/image";
 
 export default function HomeEducation() {
@@ -16,7 +17,7 @@ export default function HomeEducation() {
             className="rotate-45 scale-x-[-1] md:scale-x-100 md:-rotate-60 md:translate-x-10 -translate-y-3"
           />
         </div>
-        <div className="border-3 rotate-3 md:w-max bg-white p-4 shadow-strict">
+        <div className="border-4 rotate-3 md:w-max bg-white p-4 shadow-strict">
           <h4 className="font-semibold text-xl mb-0.5">
             Bachelor of Professional Computer Engineering
           </h4>
@@ -28,11 +29,13 @@ export default function HomeEducation() {
         </div>
       </div>
       <div className="flex flex-col md:flex-row items-center md:items-stretch justify-center gap-2">
-        <div className="border-3 -rotate-7 md:w-max bg-white p-4 shadow-strict max-w-96">
-          <h4 className="font-semibold text-xl mb-0.5">English</h4>
-          <p className="font-medium">
-            Good English proficiency for technical and professional use
-          </p>
+        <div className="border-4 -rotate-7 md:w-max bg-white p-4 shadow-strict max-w-96 space-y-3">
+          {languages?.map((lang) => (
+            <div>
+              <h4 className="font-semibold text-xl mb-0.5">{lang?.name}</h4>
+              <p className="font-medium">{lang?.description}</p>
+            </div>
+          ))}
         </div>
         <div className="flex items-start gap-5">
           <Image

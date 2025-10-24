@@ -8,17 +8,22 @@ function Button({
   className = "",
   withDoodle = false,
   children,
+  ...rest
 }) {
   return (
     <div
       className={`relative w-max rounded-full active:bg-amber-200 hover:bg-amber-200 group transition-all duration-300 border-3 cursor-pointer font-semibold bg-sky-200 ${className}`}
     >
       {href ? (
-        <Link href={href}>
+        <Link href={href} {...rest}>
           <p className="py-3 px-5">{children}</p>
         </Link>
       ) : (
-        <button onClick={onClick} className="cursor-pointer py-3 px-5">
+        <button
+          onClick={onClick}
+          className="cursor-pointer py-3 px-5"
+          {...rest}
+        >
           {children}
         </button>
       )}

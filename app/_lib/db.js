@@ -59,3 +59,13 @@ export const workExperiences = [
     endDate: new Date("2025-09-22T00:00:00.000Z"),
   },
 ];
+
+export const languages = [
+  { name: "Persian", description: "Native Language" },
+  {
+    name: "English",
+    description: "Good English proficiency for technical and professional use",
+  },
+];
+
+export const myGmail = "niayehnia1381@gmail.com";

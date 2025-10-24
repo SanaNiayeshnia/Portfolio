@@ -25,13 +25,22 @@ export default function Home() {
       <HomeWorkExperiences />
       <HomePortfolio />
       <HomeCollaboration />
-      <p className="font-caveat text-center text-2xl font-semibold px-10 pt-30 pb-5">
-        You’re still here? Must be{" "}
-        <span className="relative uppercase">
-          fate
-          <HighLighter className="bg-blue-200" />
-        </span>
-      </p>
+      <div className="px-10 pt-30 pb-5 flex flex-col-reverse gap-10 sm:flex-row sm:justify-between items-center sm:items-end">
+        <p className="font-caveat text-center text-2xl font-semibold">
+          You’re still here? Must be{" "}
+          <span className="relative uppercase">
+            fate
+            <HighLighter className="bg-blue-200" />
+          </span>
+        </p>
+        <Image
+          src="/images/doodles/doodle38.png"
+          alt="doodle"
+          width="200"
+          height="100"
+          className="rotate-30"
+        />
+      </div>
     </div>
   );
 }

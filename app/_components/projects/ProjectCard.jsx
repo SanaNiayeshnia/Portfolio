@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { TbArrowUpRight } from "react-icons/tb";
+import ReferenceButton from "../ui/ReferenceButton";
 
 function ProjectCard({ project = {} }) {
   return (
@@ -20,9 +21,7 @@ function ProjectCard({ project = {} }) {
             <h3 className="text-xl font-semibold line-clamp-1">
               {project?.title}
             </h3>
-            <Link href={project?.link}>
-              <TbArrowUpRight className="text-2xl bg-black border-2 border-black rounded active:bg-amber-200 active:text-black hover:bg-amber-200 hover:text-black  transition-all duration-300 text-white shadow-strict" />
-            </Link>
+            <ReferenceButton href={project?.link} />
           </div>
           <p className="text-justify font-medium line-clamp-3">
             {project?.description}

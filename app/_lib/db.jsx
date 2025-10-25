@@ -1,3 +1,7 @@
+import { SiGithub, SiGmail, SiLinkedin } from "react-icons/si";
+import { TbPhoneFilled } from "react-icons/tb";
+import { getGmailRedirectUrl } from "./utils";
+
 export const projects = [
   {
     title: "Project Title Title title title title",
@@ -68,4 +72,29 @@ export const languages = [
   },
 ];
 
-export const myGmail = "niayehnia1381@gmail.com";
+export const contactMethods = [
+  {
+    label: "PhoneNumber",
+    value: "09368600906",
+    icon: TbPhoneFilled,
+    link: "tel:+989368600906",
+  },
+  {
+    label: "Gmail",
+    value: process.env.NEXT_PUBLIC_MY_GMAIL,
+    icon: SiGmail,
+    link: getGmailRedirectUrl(),
+  },
+  {
+    label: "Linkedin",
+    value: "sana-niayeshnia",
+    icon: SiLinkedin,
+    link: "https://www.linkedin.com/in/sana-niayeshnia",
+  },
+  {
+    label: "Github",
+    value: "SanaNiayeshnia",
+    icon: SiGithub,
+    link: "https://github.com/SanaNiayeshnia",
+  },
+];

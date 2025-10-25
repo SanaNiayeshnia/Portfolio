@@ -13,7 +13,7 @@ function HomeBio() {
           height="100"
           className="self-end"
         />
-        <h2 className="text-3xl font-semibold ">Sana Niayeshnia</h2>
+        <h2 className="text-4xl font-semibold ">Sana Niayeshnia</h2>
         <p className="text-justify text-lg font-medium mb-5">
           A{" "}
           <span className="relative">

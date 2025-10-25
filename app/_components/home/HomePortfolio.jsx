@@ -7,19 +7,14 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import { projects } from "@/app/_lib/db";
 import ProjectCard from "../projects/ProjectCard";
+import Underline from "../ui/Underline";
 
 function HomePortfolio() {
   return (
     <section className="mt-30 sm:mt-20 px-5 md:px-10">
       <div className="flex items-center gap-4 justify-center mb-5">
         <div className="flex gap-2 text-4xl md:text-5xl font-bold ">
-          My{" "}
-          <p className="flex flex-col">
-            <span>Portfolio</span>
-            <span className="relative w-full h-2">
-              <Image src="/images/doodles/doodle17.png" alt="doodle" fill />
-            </span>
-          </p>
+          My <Underline>Portfolio</Underline>
         </div>
         <Image
           src="/images/doodles/doodle6.png"

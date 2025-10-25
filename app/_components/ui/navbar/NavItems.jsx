@@ -11,7 +11,7 @@ const navItems = [
   { name: "Home", href: "/", icon: PiStarFourFill },
   { name: "Projects", href: "/projects", icon: PiPaletteFill },
   { name: "About", href: "/about", icon: PiButterflyFill },
-  { name: "Hire Me //", href: "/hire me", icon: PiShootingStarFill },
+  { name: "Hire Me //", href: "/hire-me", icon: PiShootingStarFill },
 ];
 
 function NavItems() {

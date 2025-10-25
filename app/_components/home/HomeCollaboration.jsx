@@ -1,16 +1,9 @@
 import Image from "next/image";
 import Button from "../ui/Button";
-import { myGmail } from "@/app/_lib/db";
+import { getGmailRedirectUrl } from "@/app/_lib/utils";
 
 function HomeCollaboration() {
-  const params = new URLSearchParams({
-    view: "cm",
-    fs: "1",
-    to: myGmail,
-    su: "Let's collaborate 🤝",
-  });
-  const url = `https://mail.google.com/mail/?${params.toString()}`;
-
+  const url = getGmailRedirectUrl();
   return (
     <div className="bg-white flex items-center flex-col gap-4 mt-30 py-13 px-5 md:px-10 border-4 shadow-strict  mx-5 md:w-3/4 md:mx-auto relative">
       <Image

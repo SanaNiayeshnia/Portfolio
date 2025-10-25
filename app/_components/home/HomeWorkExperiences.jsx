@@ -1,6 +1,7 @@
 import { workExperiences } from "@/app/_lib/db";
 import { formatDate } from "@/app/_lib/utils";
 import Image from "next/image";
+import BorderFrame from "../ui/BorderFrame";
 
 const colors = ["green", "sky", "pink", "amber"];
 const colorClasses = {
@@ -13,41 +14,31 @@ const colorClasses = {
 function HomeWorkExperiences() {
   return (
     <section className="flex flex-col-reverse gap-5 sm:gap-0 md:flex-row mt-30">
-      <div className="sm:grid grid-cols-[0.5fr_10fr_0.5fr] grid-rows-[0.8fr_10fr_0.8fr] divide-2 divide-black md:w-9/12 xl:w-3/5 sm:min-h-[450px] shrink-0">
-        <div className="border-r-3 border-b-3 -mr-0.5 -mb-[2.5px] hidden sm:block"></div>
-        <div></div>
-        <div className="border-b-3 border-l-3 -mb-[2.5px] -ml-[2.5px] hidden sm:block"></div>
-        <div></div>
-        <div className="border-y-3 sm:border-x-3 p-5 lg:p-10 flex flex-col justify-center gap-6">
-          {workExperiences?.map((experience, index) => (
-            <div key={index} className="flex gap-4">
-              <p
-                className={`border-2 ${
-                  colorClasses?.[colors?.[index]]
-                } pl-5 pr-7 md:pl-7 md:pr-9 rounded-md py-2 md:py-4 font-bold font-caveat text-5xl flex justify-center items-center`}
-              >
-                {index + 1}
+      <BorderFrame>
+        {workExperiences?.map((experience, index) => (
+          <div key={index} className="flex gap-4">
+            <p
+              className={`border-3 ${
+                colorClasses?.[colors?.[index]]
+              } pl-5 pr-7 md:pl-7 md:pr-9 rounded-md py-2 md:py-4 font-bold font-caveat text-5xl flex justify-center items-center`}
+            >
+              {index + 1}
+            </p>
+            <div>
+              <h5 className="font-medium text-xl mb-0.5  text-justify">
+                {experience?.role} at{" "}
+                <span className={`font-bold`}>{experience?.company}</span>
+              </h5>
+              <p className="font-medium">{experience?.description}</p>
+              <p className="text-[#706F6F] font-medium ">
+                {formatDate(experience?.startDate, "MMMM YYYY (jMMMM jYYYY)")} -{" "}
+                {formatDate(experience?.endDate, "MMMM YYYY (jMMMM jYYYY)")}
               </p>
-              <div>
-                <h5 className="font-medium text-xl mb-0.5  text-justify">
-                  {experience?.role} at{" "}
-                  <span className={`font-bold`}>{experience?.company}</span>
-                </h5>
-                <p className="font-medium">{experience?.description}</p>
-                <p className="text-[#706F6F] font-medium ">
-                  {formatDate(experience?.startDate, "MMMM YYYY (jMMMM jYYYY)")}{" "}
-                  - {formatDate(experience?.endDate, "MMMM YYYY (jMMMM jYYYY)")}
-                </p>
-              </div>
             </div>
-          ))}
-        </div>
-        <div></div>
-        <div className="border-t-3 border-r-3 -mt-0.5 -mr-0.5 hidden sm:block"></div>
-        <div></div>
-        <div className="border-t-3 border-l-3 -mt-0.5 -ml-[2.5px] hidden sm:block"></div>
-      </div>
-      <div className="flex-grow md:py-7.5">
+          </div>
+        ))}
+      </BorderFrame>
+      <div className="flex-grow md:py-[31px]">
         <div className="flex flex-col items-center md:items-stretch justify-center md:border-y-3 border-t-transparent h-full">
           <div className="flex gap-2 items-center justify-center">
             <Image

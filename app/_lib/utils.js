@@ -9,3 +9,14 @@ export function cn(...inputs) {
 export function formatDate(date, format = "jYYYY/jMM/jDD") {
   return moment(date).format(format);
 }
+
+export function getGmailRedirectUrl() {
+  const params = new URLSearchParams({
+    view: "cm",
+    fs: "1",
+    to: process.env.NEXT_PUBLIC_MY_GMAIL,
+    su: "Let's collaborate 🤝",
+  });
+  const url = `https://mail.google.com/mail/?${params.toString()}`;
+  return url;
+}

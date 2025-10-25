@@ -1,9 +1,8 @@
-import { workExperiences } from "@/app/_lib/db";
+import { colors, workExperiences } from "@/app/_lib/db";
 import { formatDate } from "@/app/_lib/utils";
 import Image from "next/image";
 import BorderFrame from "../ui/BorderFrame";
 
-const colors = ["green", "sky", "pink", "amber"];
 const colorClasses = {
   green: "bg-green-200 ",
   sky: "bg-sky-200 ",

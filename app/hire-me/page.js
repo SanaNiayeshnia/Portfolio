@@ -2,6 +2,8 @@ import HireMeGetInTouch from "../_components/hireMe/HireMeGetInTouch";
 import HireMeIntro from "../_components/hireMe/HireMeIntro";
 import Underline from "../_components/ui/Underline";
 
+export const metadata = { title: "Hire Me" };
+
 function HireMe() {
   return (
     <div className="mt-10">

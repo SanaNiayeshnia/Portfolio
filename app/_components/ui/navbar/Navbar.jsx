@@ -11,6 +11,7 @@ import {
 } from "../sheet";
 import NavItems from "./NavItems";
 import { useState } from "react";
+import Link from "next/link";
 
 function Navbar() {
   const [open, setOpen] = useState();
@@ -30,7 +31,11 @@ function Navbar() {
         </SheetTrigger>
         <SheetContent className="border-none">
           <SheetHeader>
-            <SheetTitle className="text-lg">Sana's Portfolio</SheetTitle>
+            <SheetTitle className="text-lg">
+              <Link href="/" onClick={closeSheet}>
+                Sana's Portfolio
+              </Link>
+            </SheetTitle>
           </SheetHeader>
           <div className="px-4">
             <NavItems onItemClick={closeSheet} />

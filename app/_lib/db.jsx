@@ -1,6 +1,11 @@
 import { SiGithub, SiGmail, SiLinkedin } from "react-icons/si";
-import { TbPhoneFilled } from "react-icons/tb";
+import { TbPhoneFilled, TbTargetArrow } from "react-icons/tb";
 import { getGmailRedirectUrl } from "./utils";
+import {
+  PiCompassRoseFill,
+  PiLaptopFill,
+  PiRocketLaunchFill,
+} from "react-icons/pi";
 
 export const projects = [
   {
@@ -49,7 +54,7 @@ export const projects = [
 
 export const workExperiences = [
   {
-    role: "WordPress Designer",
+    role: "WordPress Developer",
     company: "Raei Institute",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     startDate: new Date("2023-11-01T00:00:00.000Z"),
@@ -98,3 +103,35 @@ export const contactMethods = [
     link: "https://github.com/SanaNiayeshnia",
   },
 ];
+
+export const aboutContent = [
+  {
+    title: "My Journey",
+    icon: <PiCompassRoseFill />,
+    description:
+      "I began learning front-end development in 2022, marking the start of a path that combined two things I’ve always loved — creativity and technology. With an artistic mindset and a passion for programming, front-end quickly became the perfect space for me to express ideas visually and logically.",
+  },
+  {
+    title: "Gaining Experience",
+    icon: <PiLaptopFill />,
+    description:
+      "During my studies, I worked for a year as a WordPress developer, which gave me a solid foundation in building and managing websites. Later, I transitioned into working professionally as a Front-End Developer using React and Next.js, where I gained hands-on experience developing dynamic, responsive, and performance-focused web applications.",
+    img: "/images/doodles/doodle40.png",
+  },
+  {
+    title: "Always Learning",
+    icon: <PiRocketLaunchFill />,
+    description:
+      "I’m not afraid of learning new technologies — actually, I enjoy it. The web moves fast, and staying curious keeps me motivated. Whether it’s experimenting with new tools or optimizing performance, I love exploring better ways to build clean, efficient, and user-friendly interfaces.",
+    img: "/images/doodles/doodle43.png",
+  },
+  {
+    title: "Today",
+    icon: <TbTargetArrow />,
+    description:
+      "Today, I continue improving my skills and exploring new ideas in front-end development. My goal is to build meaningful digital experiences that feel smooth, fast, and engaging — and to always keep learning along the way.",
+    img: "/images/doodles/doodle44.png",
+  },
+];
+
+export const colors = ["green", "sky", "pink", "amber"];

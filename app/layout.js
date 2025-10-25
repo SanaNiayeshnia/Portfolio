@@ -17,7 +17,7 @@ const caveat = Caveat({
 });
 
 export const metadata = {
-  title: { template: "%s% | Sana's Portfolio", default: "Sana's Portfolio" },
+  title: { template: "%sa | Sana's Portfolio", default: "Sana's Portfolio" },
   description: "Portfolio of a front-end developer called Sana Niayeshnia.",
 };
 

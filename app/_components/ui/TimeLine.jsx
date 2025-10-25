@@ -20,7 +20,7 @@ export default function TimeLine({ items = [] }) {
         >
           <div className="sm:w-1/2 shrink-0 grid place-items-center border-l-2 sm:border-l-0">
             {!!item?.img && (
-              <div className="relative w-42 aspect-square">
+              <div className="relative w-46 aspect-square">
                 <Image
                   src={item?.img}
                   alt={item?.title}
@@ -46,7 +46,7 @@ export default function TimeLine({ items = [] }) {
               <h4 className="font-semibold text-2xl">{item?.title}</h4>
             </div>
             <div
-              className={`font-medium text-justify px-5 py-5 ${
+              className={`font-medium text-justify px-5 py-12 ${
                 index % 2 !== 0
                   ? "border-l-2 sm:border-l-0 sm:border-r-2"
                   : "border-l-2"

@@ -135,3 +135,16 @@ export const aboutContent = [
 ];
 
 export const colors = ["green", "sky", "pink", "amber"];
+
+export const randomFacts = [
+  "My MBTI type is INFJ.",
+  "I LOVE reading fantasy books (knights, elves, dragons, etc.)",
+  "I enjoy doing yoga.",
+  "My favorite singer is Halsey.",
+  "I used to draw realistic art when I was younger.",
+  "I write poems that I rarely share with anyone.",
+  "My favorite color is blue. (So yeah, I'd like to paint the whole web blue!)",
+  "I have a younger sister.",
+  "I'm a Marvel fan. (Loki is my favorite character.)",
+  "My dream job is to own a flower shop.",
+];

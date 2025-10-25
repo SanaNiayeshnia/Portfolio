@@ -37,7 +37,7 @@ function HomeBio() {
           See My Projects
         </Button>
       </div>
-      <div className="size-90 relative shrink-0">
+      <div className="size-80 xs:size-90 relative shrink-0">
         <Image src="/images/doodles/doodle15.png" alt="wireframe" fill />
         <Image
           src="/images/doodles/doodle1.png"

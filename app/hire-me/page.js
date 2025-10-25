@@ -11,7 +11,7 @@ function HireMe() {
         <span>Because milliseconds matter—</span>
         <p className="flex items-start gap-2 flex-wrap">
           <span>and your users deserve a</span>
-          <Underline>smooth ride</Underline>.
+          <Underline>smooth ride.</Underline>
         </p>
       </div>
     </div>

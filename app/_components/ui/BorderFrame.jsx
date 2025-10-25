@@ -19,7 +19,7 @@ function BorderFrame({
       <div className="border-b-3 border-l-3 -mb-[2.5px] -ml-[2.5px] hidden sm:block"></div>
       <div></div>
       <div
-        className={`border-y-3 sm:border-x-3 p-5 lg:p-10 flex flex-col justify-center gap-6 ${contentWrapperClassName}`}
+        className={`border-y-3 sm:border-x-3 px-2 py-5 xs:px-5 lg:p-10 flex flex-col justify-center gap-6 ${contentWrapperClassName}`}
       >
         {children}
       </div>

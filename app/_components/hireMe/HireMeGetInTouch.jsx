@@ -12,7 +12,7 @@ function HireMeGetInTouch() {
     <div className="mt-15 md:mt-10">
       <BorderFrame
         className="!min-h-max !w-full"
-        contentWrapperClassName="relative !pt-12"
+        contentWrapperClassName="relative pt-10 md:!pt-12"
       >
         <p className="font-caveat bg-amber-200 text-4xl font-semibold absolute -top-5 right-1/2 translate-x-1/2 md:top-0 md:-left-12 md:right-auto md:translate-x-0 md:-rotate-30 ">
           Get in touch

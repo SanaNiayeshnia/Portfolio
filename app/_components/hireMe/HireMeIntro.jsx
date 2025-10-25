@@ -3,7 +3,7 @@ import HighLighter from "../ui/Highlighter";
 
 export default function HireMeIntro() {
   return (
-    <div className="flex items-center gap-6 justify-between px-20">
+    <div className="flex flex-col md:flex-row items-center gap-6 justify-between px-5 md:px-10 lg:px-20">
       <div className="space-y-2">
         <h1 className="font-semibold text-4xl">Let’s work together!</h1>
         <p className="text-justify font-medium text-lg">

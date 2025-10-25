@@ -7,9 +7,12 @@ function HireMe() {
     <div className="mt-10">
       <HireMeIntro />
       <HireMeGetInTouch />
-      <div className="text-4xl flex items-start gap-2 font-caveat justify-center font-medium px-4 text-center py-20">
-        Because milliseconds matter—and your users deserve a{" "}
-        <Underline>smooth ride</Underline>.
+      <div className="text-4xl flex flex-col md:flex-row items-start gap-2 font-caveat justify-center font-medium px-4 text-center py-20 flex-wrap">
+        <span>Because milliseconds matter—</span>
+        <p className="flex items-start gap-2 flex-wrap">
+          <span>and your users deserve a</span>
+          <Underline>smooth ride</Underline>.
+        </p>
       </div>
     </div>
   );

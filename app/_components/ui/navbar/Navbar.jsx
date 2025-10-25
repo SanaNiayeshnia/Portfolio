@@ -1,3 +1,4 @@
+"use client";
 import { TbMenu2 } from "react-icons/tb";
 import Logo from "../Logo";
 import {
@@ -9,15 +10,21 @@ import {
   SheetTrigger,
 } from "../sheet";
 import NavItems from "./NavItems";
+import { useState } from "react";
 
 function Navbar() {
+  const [open, setOpen] = useState();
+  function closeSheet() {
+    setOpen(false);
+  }
+
   return (
     <div className="flex fixed top-5 left-4 right-4 sm:left-auto sm:right-1/2 sm:translate-x-1/2 bg-white shadow-strict  items-center gap-8 justify-between border-3 border-black sm:w-max z-20">
       <Logo />
       <div className="hidden sm:block">
         <NavItems />
       </div>
-      <Sheet>
+      <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger className="sm:hidden p-2 cursor-pointer group">
           <TbMenu2 className="text-2xl group-hover:scale-110 transition-all duration-300 group-active:scale-110" />
         </SheetTrigger>
@@ -26,7 +33,7 @@ function Navbar() {
             <SheetTitle className="text-lg">Sana's Portfolio</SheetTitle>
           </SheetHeader>
           <div className="px-4">
-            <NavItems />
+            <NavItems onItemClick={closeSheet} />
           </div>
           <SheetFooter>
             <p className="text-center font-caveat text-xl font-medium">

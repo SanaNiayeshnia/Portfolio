@@ -2,11 +2,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import HighLighter from "../Highlighter";
 
-function NavItem({ item }) {
+/**
+ * @param {object} props - Component properties
+ * @param {object} [props.item={}] -Item's object
+ * @param {()=>void} props.onClick - On click event function
+ */
+
+function NavItem({ item = {}, onClick }) {
   const pathname = usePathname();
 
   return (
-    <li>
+    <li onClick={onClick}>
       <Link
         href={item?.href}
         className={`py-2 px-2 w-max group transition-all duration-300  flex items-center gap-2 ${

@@ -1,4 +1,10 @@
 "use client";
+
+/**
+ * @param {object} props - Component properties
+ * @param {()=>void} props.onItemClick - On click event function for the items
+ */
+
 import NavItem from "./NavItem";
 import {
   PiShootingStarFill,
@@ -14,11 +20,11 @@ const navItems = [
   { name: "Hire Me //", href: "/hire-me", icon: PiShootingStarFill },
 ];
 
-function NavItems() {
+function NavItems({ onItemClick }) {
   return (
     <ul className="flex flex-col gap-3 sm:gap-0 sm:flex-row sm:items-center font-medium sm:divide-x-3 !divide-black">
       {navItems?.map((item, index) => (
-        <NavItem key={index} item={item} />
+        <NavItem key={index} item={item} onClick={onItemClick} />
       ))}
     </ul>
   );

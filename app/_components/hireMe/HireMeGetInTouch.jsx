@@ -9,7 +9,7 @@ const colors = ["green", "sky", "pink", "amber"];
 
 function HireMeGetInTouch() {
   return (
-    <div className="mt-10">
+    <div className="mt-15 md:mt-10">
       <BorderFrame
         className="!min-h-max !w-full"
         contentWrapperClassName="relative !pt-12"
@@ -30,7 +30,7 @@ function HireMeGetInTouch() {
                   width="12"
                   height="12"
                 />
-                <span>{method?.label}:</span>
+                <span className="hidden sm:block">{method?.label}:</span>
                 <Link href={method?.link} className="relative" target="_blank">
                   {method?.value}
                   <HighLighter className={`bg-${colors?.[index]}-200`} />

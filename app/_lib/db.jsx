@@ -109,14 +109,15 @@ export const aboutContent = [
     title: "My Journey",
     icon: <PiCompassRoseFill />,
     description:
-      "I began learning front-end development in 2022, marking the start of a path that combined two things I’ve always loved — creativity and technology. With an artistic mindset and a passion for programming, front-end quickly became the perfect space for me to express ideas visually and logically.",
+      "I began learning front-end development in 2022, marking the start of a path that combined two things I’ve always loved — creativity and technology. Alongside learning front-end, I was also studying for my Bachelor’s degree in Computer Engineering at Shariati Technical College, where I graduated in 2025. With an artistic mindset and a passion for programming, front-end quickly became the perfect space for me to express ideas both visually and logically.",
+    img: "/images/doodles/doodle41.png",
   },
   {
     title: "Gaining Experience",
     icon: <PiLaptopFill />,
     description:
       "During my studies, I worked for a year as a WordPress developer, which gave me a solid foundation in building and managing websites. Later, I transitioned into working professionally as a Front-End Developer using React and Next.js, where I gained hands-on experience developing dynamic, responsive, and performance-focused web applications.",
-    img: "/images/doodles/doodle40.png",
+    img: "/images/doodles/doodle45.png",
   },
   {
     title: "Always Learning",

@@ -10,14 +10,7 @@ import HomeCollaboration from "./_components/home/HomeCollaboration";
 
 export default function Home() {
   return (
-    <div>
-      <Image
-        src="/images/doodles/doodle19.png"
-        alt="doodle"
-        width="100"
-        height="100"
-        className="-ml-12 z-10"
-      />
+    <div className="md:pt-10">
       <HomeBio />
       <SkillsSlider />
       <HomeEducation />

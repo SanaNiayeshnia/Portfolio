@@ -77,7 +77,10 @@ const services = [
 
 function HomeServices() {
   return (
-    <section className="px-5 md:pr-0 md:pl-15 lg:pl-20 mt-30 md:mt-20 flex flex-col">
+    <section
+      className="px-5 md:pr-0 md:pl-15 lg:pl-20 mt-30 md:mt-20 flex flex-col"
+      id="skills"
+    >
       <div className="flex items-center  gap-3 sm:max-w-96 ">
         <h2 className="font-semibold text-5xl font-caveat">
           Services I'm providing that derive 99% result

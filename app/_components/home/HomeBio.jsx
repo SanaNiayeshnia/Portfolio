@@ -37,8 +37,14 @@ function HomeBio() {
           See My Projects
         </Button>
       </div>
-      <div className="size-80 xs:size-90 relative shrink-0">
+      <div className="size-80 xs:size-90 lg:size-95 relative shrink-0">
         <Image src="/images/doodles/doodle15.png" alt="wireframe" fill />
+        <Image
+          src="/images/avatar/2.jpg"
+          alt="wireframe"
+          fill
+          className="object-contain"
+        />
         <Image
           src="/images/doodles/doodle1.png"
           width="65"

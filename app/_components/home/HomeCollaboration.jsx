@@ -5,7 +5,7 @@ import { getGmailRedirectUrl } from "@/app/_lib/utils";
 function HomeCollaboration() {
   const url = getGmailRedirectUrl();
   return (
-    <div className="bg-white flex items-center flex-col gap-4 mt-30 py-13 px-5 md:px-10 border-4 shadow-strict  mx-5 md:w-3/4 md:mx-auto relative">
+    <div className="bg-white flex items-center flex-col gap-4  py-13 px-5 md:px-10 border-4 shadow-strict relative mt-30 mx-5 md:w-3/4 md:mx-auto">
       <Image
         src="/images/doodles/doodle19.png"
         alt="doodle"
@@ -13,7 +13,7 @@ function HomeCollaboration() {
         height="100"
         className="absolute -top-10 right-1/10"
       />
-      <h3 className="text-4xl font-semibold text-center flex items-center gap-2 flex-col sm:flex-row">
+      <h3 className="text-4xl font-semibold flex-wrap text-center flex items-center gap-2 flex-col sm:flex-row">
         <span>Let’s make your</span>
         <span>project fly</span>
       </h3>

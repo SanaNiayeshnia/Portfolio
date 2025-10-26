@@ -37,7 +37,14 @@ export default function RootLayout({ children }) {
               height="100"
               className="absolute -top-8 -right-8 z-10 "
             />
-            {children}
+            <Image
+              src="/images/doodles/doodle19.png"
+              alt="doodle"
+              width="100"
+              height="100"
+              className="-ml-12 z-10"
+            />
+            <div className="-translate-y-20">{children}</div>
           </div>
         </main>
         <Footer />

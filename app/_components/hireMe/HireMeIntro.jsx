@@ -5,8 +5,10 @@ export default function HireMeIntro() {
   return (
     <div className="flex flex-col md:flex-row items-center gap-6 justify-between px-5 md:px-10 lg:px-20">
       <div className="space-y-2">
-        <h1 className="font-semibold text-4xl">Let’s work together!</h1>
-        <p className="text-justify font-medium text-lg">
+        <h1 className="font-semibold text-4xl text-center sm:text-left">
+          Let’s work together!
+        </h1>
+        <p className="text-justify font-medium text-lg flex flex-wrap">
           I’d love to hear about your project, your vision, or even your
           weirdest design challenge. Whether you’re starting from scratch or
           improving what you already have, I’m here to turn your ideas into

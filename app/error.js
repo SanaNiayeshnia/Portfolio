@@ -5,7 +5,7 @@ import Button from "./_components/ui/Button";
 
 export default function Error({ reset }) {
   return (
-    <div className="grid place-content-center h-screen">
+    <div className="grid place-content-center h-[80vh]">
       <div className="flex flex-col justify-center items-center">
         <Image
           src="/images/doodles/doodle36.png"

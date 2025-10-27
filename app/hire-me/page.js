@@ -6,7 +6,7 @@ export const metadata = { title: "Hire Me" };
 
 function HireMe() {
   return (
-    <div className="mt-10">
+    <div className="mt-12 md:mt-10">
       <HireMeIntro />
       <HireMeGetInTouch />
       <div className="text-3xl sm:text-4xl flex flex-col md:flex-row items-start gap-2 font-caveat justify-center font-medium px-4 text-center py-20 flex-wrap">

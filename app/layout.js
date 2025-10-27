@@ -42,9 +42,9 @@ export default function RootLayout({ children }) {
               alt="doodle"
               width="100"
               height="100"
-              className="-ml-12 z-10"
+              className="-ml-12 z-10 -translate-y-2 md:translate-y-0"
             />
-            <div className="-translate-y-20">{children}</div>
+            <div className="-mt-20">{children}</div>
           </div>
         </main>
         <Footer />

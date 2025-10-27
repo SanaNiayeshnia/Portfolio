@@ -9,7 +9,7 @@ export const metadata = { title: "About" };
 
 function About() {
   return (
-    <div className="px-10 mt-5 pb-20">
+    <div className="px-5 md:px-10 mt-5 pb-20">
       <div className="flex items-center flex-col-reverse md:flex-row justify-center gap-8 md:gap-4">
         <Image
           src="/images/avatar/1.png"

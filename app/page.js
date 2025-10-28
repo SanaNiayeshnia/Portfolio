@@ -4,7 +4,7 @@ import SkillsSlider from "./_components/home/SkillsSlider";
 import HomeServices from "./_components/home/HomeServices";
 import HomeWorkExperiences from "./_components/home/HomeWorkExperiences";
 import HomeEducation from "./_components/home/HomeEducation";
-import HomePortfolio from "./_components/home/HomePortfolio";
+import HomePortfolio from "./_components/home/homePortfolio/HomePortfolio";
 import HighLighter from "./_components/ui/Highlighter";
 import HomeCollaboration from "./_components/home/HomeCollaboration";
 

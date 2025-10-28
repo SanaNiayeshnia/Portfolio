@@ -1,29 +1,52 @@
 import Image from "next/image";
-import Link from "next/link";
-import { TbArrowUpRight } from "react-icons/tb";
 import ReferenceButton from "../ui/ReferenceButton";
 
 function ProjectCard({ project = {} }) {
   return (
-    <div className="aspect-square flex flex-col gap-3 px-10 py-9">
+    <div className="aspect-square flex flex-col gap-3 px-10 py-9 group">
       <Image fill alt="doodle" src="/images/doodles/doodle14.png" />
       <div className="z-1 flex flex-col gap-4 justify-center">
-        <div className="relative min-h-40 xl:min-h-50 border-4">
+        <div className="relative min-h-40 xl:min-h-45 border-3 overflow-hidden">
           <Image
-            alt={`${project.title}`}
-            src={project.img}
+            alt={`${project?.name}`}
+            src={project?.images?.[0]}
             fill
-            className="object-cover"
+            className="object-cover object-top group-hover:scale-130 transition-all duration-300"
           />
         </div>
         <div className="space-y-3">
-          <div className="flex items-center gap-4 justify-between">
-            <h3 className="text-xl font-semibold line-clamp-1">
-              {project?.title}
-            </h3>
-            <ReferenceButton href={project?.link} />
+          <div className="space-y-1">
+            <div className="flex items-center gap-4 justify-between">
+              <h3 className="text-lg font-semibold line-clamp-1">
+                {project?.name}
+              </h3>
+              <ReferenceButton href={`projects/${project?.id}`} />
+            </div>
+            <div className="flex items-center gap-2">
+              <Badge
+                className={
+                  project?.type === "work-based"
+                    ? "bg-[#ff9b96]"
+                    : "bg-[#d9c2ff]"
+                }
+              >
+                {project?.type}
+              </Badge>
+              <Badge
+                className={
+                  project?.scale === "advanced"
+                    ? "bg-green-200"
+                    : project?.scale === "average"
+                    ? "bg-sky-200"
+                    : "bg-pink-200"
+                }
+              >
+                {project?.scale}
+              </Badge>
+            </div>
           </div>
-          <p className="text-justify font-medium line-clamp-3">
+
+          <p className="text-justify font-medium line-clamp-4">
             {project?.description}
           </p>
         </div>
@@ -33,3 +56,13 @@ function ProjectCard({ project = {} }) {
 }
 
 export default ProjectCard;
+
+function Badge({ className = "", children }) {
+  return (
+    <p
+      className={`text-sm font-medium rounded-full border-2 w-max px-2 py-0.5 ${className}`}
+    >
+      {children}
+    </p>
+  );
+}

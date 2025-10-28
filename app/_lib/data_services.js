@@ -13,7 +13,6 @@ export async function getWorkExperiences() {
     .from("workExperiences")
     .select("*")
     .order("created_at", { ascending: true });
-  console.log("experiences", workExperiences);
   if (error) {
     console.log("Error fetching work experiences:", error);
   }

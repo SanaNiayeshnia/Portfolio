@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import { TbChevronLeft, TbChevronRight } from "react-icons/tb";
 import ProjectCard from "../../projects/ProjectCard";
 
-export default function PortfolioSlider({ projects = [] }) {
+export default function PortfolioSlider({ projects = [], loading = false }) {
   return (
     <div className="relative px-5 md:px-10 cursor-grab">
       <Swiper
@@ -35,8 +35,8 @@ export default function PortfolioSlider({ projects = [] }) {
         }}
       >
         {projects?.map((project, index) => (
-          <SwiperSlide key={index}>
-            <ProjectCard project={project} />
+          <SwiperSlide key={index} className="max-w-100">
+            <ProjectCard project={project} loading={loading} />
           </SwiperSlide>
         ))}
       </Swiper>

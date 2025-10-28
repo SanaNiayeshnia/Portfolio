@@ -4,8 +4,10 @@ import Underline from "../../ui/Underline";
 import { getProjects } from "@/app/_lib/data_services";
 import PortfolioSlider from "./PortfolioSlider";
 
-async function HomePortfolio() {
-  const projects = await getProjects();
+async function HomePortfolio({ loading = false }) {
+  const projects = loading
+    ? Array.from({ length: 3 }).fill({})
+    : await getProjects();
 
   return (
     <section className="mt-30 sm:mt-20 ">
@@ -20,7 +22,7 @@ async function HomePortfolio() {
           height="100"
         />
       </div>
-      <PortfolioSlider projects={projects} />
+      <PortfolioSlider projects={projects} loading={loading} />
     </section>
   );
 }

@@ -3,6 +3,7 @@ import { formatDate } from "@/app/_lib/utils";
 import Image from "next/image";
 import BorderFrame from "../ui/BorderFrame";
 import { getWorkExperiences } from "@/app/_lib/data_services";
+import { Skeleton } from "../ui/skeleton";
 
 const colorClasses = {
   green: "bg-green-200 ",
@@ -11,8 +12,10 @@ const colorClasses = {
   amber: "bg-amber-200 ",
 };
 
-async function HomeWorkExperiences() {
-  const workExperiences = await getWorkExperiences();
+async function HomeWorkExperiences({ loading = false }) {
+  const workExperiences = loading
+    ? Array.from({ length: 2 })
+    : await getWorkExperiences();
 
   return (
     <section className="flex flex-col-reverse gap-5 sm:gap-0 md:flex-row mt-30">
@@ -26,22 +29,37 @@ async function HomeWorkExperiences() {
             >
               {index + 1}
             </p>
-            <div className="space-y-1">
-              <h5 className="mb-1 text-justify flex flex-col sm:items-center sm:flex-row sm:gap-2">
-                <span className="text-sm sm:text-lg font-medium">
-                  {experience?.position} at
-                </span>
-                <span className={`font-bold text-xl`}>
-                  {experience?.company}
-                </span>
-              </h5>
-              <p className="font-medium text-justify">
-                {experience?.description}
-              </p>
-              <p className="text-[#706F6F] font-medium text-justify text-sm">
-                {formatDate(experience?.startDate, "MMMM YYYY (jMMMM jYYYY)")} -{" "}
-                {formatDate(experience?.endDate, "MMMM YYYY (jMMMM jYYYY)")}
-              </p>
+            <div className="space-y-1 flex-grow">
+              {loading ? (
+                <>
+                  <Skeleton className="h-7 w-2/3 bg-stone-300" />
+                  <Skeleton className="h-12 w-full bg-stone-300 " />
+                  <Skeleton className="h-5 bg-stone-300" />
+                </>
+              ) : (
+                <>
+                  {" "}
+                  <h5 className="mb-1 text-justify flex flex-col sm:items-center sm:flex-row sm:gap-2">
+                    <span className="text-sm sm:text-lg font-medium">
+                      {experience?.position} at
+                    </span>
+                    <span className={`font-bold text-xl`}>
+                      {experience?.company}
+                    </span>
+                  </h5>
+                  <p className="font-medium text-justify">
+                    {experience?.description}
+                  </p>
+                  <p className="text-stone-500 font-medium text-justify text-sm">
+                    {formatDate(
+                      experience?.startDate,
+                      "MMMM YYYY (jMMMM jYYYY)"
+                    )}{" "}
+                    -{" "}
+                    {formatDate(experience?.endDate, "MMMM YYYY (jMMMM jYYYY)")}
+                  </p>
+                </>
+              )}
             </div>
           </div>
         ))}

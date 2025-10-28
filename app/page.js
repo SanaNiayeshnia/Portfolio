@@ -7,6 +7,7 @@ import HomeEducation from "./_components/home/HomeEducation";
 import HomePortfolio from "./_components/home/homePortfolio/HomePortfolio";
 import HighLighter from "./_components/ui/Highlighter";
 import HomeCollaboration from "./_components/home/HomeCollaboration";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -15,8 +16,12 @@ export default function Home() {
       <SkillsSlider />
       <HomeEducation />
       <HomeServices />
-      <HomeWorkExperiences />
-      <HomePortfolio />
+      <Suspense fallback={<HomeWorkExperiences loading />}>
+        <HomeWorkExperiences />
+      </Suspense>
+      <Suspense fallback={<HomePortfolio loading />}>
+        <HomePortfolio />
+      </Suspense>
       <HomeCollaboration />
       <div className="px-10 pt-30 pb-5 flex flex-col-reverse gap-10 sm:flex-row sm:justify-between items-center sm:items-end">
         <p className="font-caveat text-center text-2xl font-semibold">

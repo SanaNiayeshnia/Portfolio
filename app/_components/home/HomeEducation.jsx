@@ -30,8 +30,8 @@ export default function HomeEducation() {
       </div>
       <div className="flex flex-col md:flex-row items-center md:items-stretch justify-center gap-2">
         <div className="border-4 -rotate-7 md:w-max bg-white p-4 shadow-strict max-w-96 space-y-3">
-          {languages?.map((lang) => (
-            <div>
+          {languages?.map((lang, index) => (
+            <div key={index}>
               <h4 className="font-semibold text-xl mb-0.5">{lang?.name}</h4>
               <p className="font-medium">{lang?.description}</p>
             </div>

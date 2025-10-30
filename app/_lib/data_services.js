@@ -18,3 +18,15 @@ export async function getWorkExperiences() {
   }
   return workExperiences;
 }
+
+export async function getProject(id) {
+  let { data: project, error } = await supabase
+    .from("projects")
+    .select("*")
+    .eq("id", id)
+    .single();
+  if (error) {
+    console.log(`Error fetching the project with the id of ${id}:`, error);
+  }
+  return project;
+}

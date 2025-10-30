@@ -7,7 +7,10 @@ export function cn(...inputs) {
 }
 
 export function formatDate(date, format = "jYYYY/jMM/jDD") {
-  return moment(date).format(format);
+  return moment(date)
+    .format(format)
+    .replace("aa", "a")
+    .replace("Amordad", "Mordad");
 }
 
 export function getGmailRedirectUrl() {

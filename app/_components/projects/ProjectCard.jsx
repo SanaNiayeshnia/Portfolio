@@ -89,7 +89,7 @@ function ProjectCard({ project = {}, loading = false }) {
 
 export default ProjectCard;
 
-function Badge({ className = "", children }) {
+export function Badge({ className = "", children }) {
   return (
     <p
       className={`text-sm font-medium rounded-full border-2 w-max px-2 py-0.5 ${className}`}

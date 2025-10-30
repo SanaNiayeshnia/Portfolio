@@ -4,7 +4,13 @@ import { FreeMode, Navigation, Thumbs, Zoom } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
-import { TbArrowsDiagonal, TbChevronDown, TbChevronUp } from "react-icons/tb";
+import {
+  TbArrowsDiagonal,
+  TbChevronDown,
+  TbChevronLeft,
+  TbChevronRight,
+  TbChevronUp,
+} from "react-icons/tb";
 import Image from "next/image";
 import "swiper/css/thumbs";
 import "swiper/css/free-mode";
@@ -28,25 +34,58 @@ function SingleProjectPics({ project = {} }) {
   }
 
   return (
-    <div className="flex-grow w-full h-[400px] flex gap-4">
-      <div className="relative py-8">
+    <div className="lg:sticky top-25 lg:w-2/3  space-y-4">
+      <div className="h-[400px]">
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={1}
+          modules={[Thumbs, FreeMode, Zoom]}
+          freeMode={true}
+          watchSlidesProgress={true}
+          loop
+          zoom
+          className="flex-grow h-full overflow-hidden cursor-grab relative bg-black border-2 rounded-md"
+          thumbs={{ swiper: thumbsSwiper }}
+          onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
+        >
+          {project?.images?.map((pic, index) => (
+            <SwiperSlide key={index}>
+              <div className="w-full h-full swiper-zoom-container">
+                <Image
+                  className="object-contain z-1"
+                  src={pic || "/images/placeholder.jpg"}
+                  alt={project?.name}
+                  fill
+                  placeholder="blur"
+                  blurDataURL="/images/placeholder.jpg"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+          <TbArrowsDiagonal
+            onClick={openLightBox}
+            className="absolute bottom-2 text-3xl right-2 z-2 bg-amber-200 rounded-sm p-0.5 border-2 hover:bg-green-200 transition-all duration-300 cursor-pointer"
+          />
+        </Swiper>
+      </div>
+
+      <div className="relative px-5 [&_button]:bg-amber-200 [&_button]:border-2 [&_button]:cursor-pointer [&_button]:rounded-full [&_button]:p-0.5 [&_button]:hover:bg-green-200 [&_button]:active:bg-green-200 [&_button]:transition-all [&_button]:duration-300">
         <Swiper
           onSwiper={setThumbsSwiper}
           spaceBetween={15}
-          slidesPerView={4}
+          slidesPerView={5}
           modules={[Navigation, Thumbs, FreeMode]}
-          direction="vertical"
           freeMode={true}
           watchSlidesProgress={true}
           loop
           navigation={{ nextEl: ".nextProject", prevEl: ".previousProject" }}
-          className="h-full overflow-hidden cursor-pointer shrink-0"
+          className="h-full w-full overflow-hidden cursor-pointer shrink-0"
         >
           {project?.images?.map((pic, index) => (
             <SwiperSlide key={index}>
-              <div className="w-30 h-15 relative border-2 rounded">
+              <div className="w-30 h-15 relative border-2 rounded overflow-hidden">
                 <Image
-                  className="object-cover"
+                  className="object-cover brightness-90 active:brightness-100 hover:brightness-100 transition-all duration-300"
                   src={pic || "/images/placeholder.jpg"}
                   alt={project?.name}
                   fill
@@ -57,47 +96,13 @@ function SingleProjectPics({ project = {} }) {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="flex flex-col items-center gap-4 justify-between absolute left-1/2 [&_button]:z-2 bottom-0 top-0  text-xl -translate-x-1/2 [&_button]:bg-amber-200 [&_button]:border-2 [&_button]:cursor-pointer [&_button]:rounded-full [&_button]:p-0.5 [&_button]:hover:bg-green-200 [&_button]:active:bg-green-200 [&_button]:transition-all [&_button]:duration-300">
-          <button className="previousProject">
-            <TbChevronUp />
-          </button>
-          <button className="nextProject">
-            <TbChevronDown className="translate-y-0.5" />
-          </button>
-        </div>
+        <button className="previousProject  absolute top-1/2 z-2 left-0  text-xl -translate-y-1/2 ">
+          <TbChevronLeft />
+        </button>
+        <button className="nextProject absolute top-1/2 z-2 right-0  text-xl -translate-y-1/2">
+          <TbChevronRight />
+        </button>
       </div>
-
-      <Swiper
-        spaceBetween={30}
-        slidesPerView={1}
-        modules={[Thumbs, FreeMode, Zoom]}
-        freeMode={true}
-        watchSlidesProgress={true}
-        loop
-        zoom
-        className="flex-grow h-full overflow-hidden cursor-pointer relative bg-black"
-        thumbs={{ swiper: thumbsSwiper }}
-        onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
-      >
-        {project?.images?.map((pic, index) => (
-          <SwiperSlide key={index}>
-            <div className="w-full h-full swiper-zoom-container">
-              <Image
-                className="object-contain z-1"
-                src={pic || "/images/placeholder.jpg"}
-                alt={project?.name}
-                fill
-                placeholder="blur"
-                blurDataURL="/images/placeholder.jpg"
-              />
-            </div>
-          </SwiperSlide>
-        ))}
-        <TbArrowsDiagonal
-          onClick={openLightBox}
-          className="absolute bottom-2 text-3xl right-2 z-2 bg-amber-200 rounded-sm p-0.5 border-2 hover:bg-green-200 transition-all duration-300"
-        />
-      </Swiper>
       <Lightbox
         open={isLightBoxOpen}
         close={() => setIsLightBoxOpen(false)}

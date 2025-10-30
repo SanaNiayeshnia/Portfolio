@@ -1,7 +1,7 @@
 import Button from "@/app/_components/ui/Button";
 import Image from "next/image";
 
-function NotFound() {
+function NotFound({ title = "Page" }) {
   return (
     <div className="grid place-content-center h-[80vh]">
       <div className="flex flex-col justify-center items-center">
@@ -23,7 +23,7 @@ function NotFound() {
           </span>
         </h2>
 
-        <p className="text-4xl font-semibold">Page not found</p>
+        <p className="text-4xl font-semibold">{title} not found</p>
         <p className="font-caveat text-2xl font-semibold">
           but your curiosity is appreciated
         </p>

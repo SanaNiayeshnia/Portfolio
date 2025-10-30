@@ -7,12 +7,17 @@ function Button({
   onClick,
   className = "",
   withDoodle = false,
+  varient = "primary",
   children,
   ...rest
 }) {
   return (
     <div
-      className={`relative w-max rounded-full active:bg-amber-200 hover:bg-amber-200 group transition-all duration-300 border-3 cursor-pointer font-semibold bg-sky-200 ${className}`}
+      className={`relative w-max rounded-full  group transition-all duration-300 border-3 cursor-pointer font-semibold ${
+        varient === "primary"
+          ? "active:bg-amber-200 hover:bg-amber-200 bg-sky-200"
+          : "bg-pink-200 active:bg-green-200 hover:bg-green-200"
+      }  ${className}`}
     >
       {href ? (
         <Link href={href} {...rest}>
@@ -33,7 +38,11 @@ function Button({
           alt="doodle"
           width="30"
           height="30"
-          className="absolute -bottom-3 -right-6 transition-all duration-300 group-hover:scale-110"
+          className={`absolute -bottom-3  transition-all duration-300  ${
+            varient === "primary"
+              ? "-right-6 group-hover:scale-110"
+              : "-left-6 -scale-x-100 group-hover:-scale-x-110 scale-y-110"
+          }`}
         />
       )}
     </div>

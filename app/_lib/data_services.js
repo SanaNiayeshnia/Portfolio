@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { supabase } from "./supabase";
 
 export async function getProjects() {
@@ -22,11 +23,13 @@ export async function getWorkExperiences() {
 export async function getProject(id) {
   let { data: project, error } = await supabase
     .from("projects")
-    .select("*")
+    .select("*, workExperiences(*)")
     .eq("id", id)
     .single();
+
   if (error) {
     console.log(`Error fetching the project with the id of ${id}:`, error);
+    notFound();
   }
   return project;
 }

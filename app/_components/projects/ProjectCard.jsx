@@ -13,9 +13,15 @@ function ProjectCard({ project = {}, loading = false }) {
           ) : (
             <Image
               alt={`${project?.name}`}
-              src={project?.images?.[0]}
+              src={project?.images?.[0] || "/images/placeholder.jpg"}
               fill
-              className="object-cover object-top group-hover:scale-130 transition-all duration-300"
+              className={` group-hover:scale-130 transition-all duration-300 ${
+                project?.images?.[0]
+                  ? "object-cover object-top"
+                  : "object-center"
+              }`}
+              placeholder="blur"
+              blurDataURL="/images/placeholder.jpg"
             />
           )}
         </div>

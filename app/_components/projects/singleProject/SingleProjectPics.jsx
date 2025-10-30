@@ -6,10 +6,8 @@ import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import {
   TbArrowsDiagonal,
-  TbChevronDown,
   TbChevronLeft,
   TbChevronRight,
-  TbChevronUp,
 } from "react-icons/tb";
 import Image from "next/image";
 import "swiper/css/thumbs";

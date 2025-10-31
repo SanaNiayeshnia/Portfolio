@@ -1,15 +1,19 @@
 import { TbDeviceDesktopShare, TbSettings } from "react-icons/tb";
 import Button from "../../ui/Button";
+import HighLighter from "../../ui/Highlighter";
 
 function SingleProjectDetails({ project = {} }) {
   return (
     <div className="space-y-3">
       <p className="text-justify font-medium">{project?.description}</p>
-      <p className="space-x-1 font-medium  text-justify">
-        <TbSettings className="text-2xl inline-block" />
-        <span className="font-semibold text-lg">Technologies:</span>{" "}
-        <span>{project?.technologies?.join(", ")}</span>
-      </p>
+      <DetailsSection
+        title="Technologies"
+        icon={<TbSettings className="text-2xl" />}
+        highlighterClass="bg-blue-200"
+      >
+        {project?.technologies?.join(", ")}
+      </DetailsSection>
+
       <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-y-3 gap-x-2">
         {!!project?.github && (
           <Button
@@ -22,11 +26,14 @@ function SingleProjectDetails({ project = {} }) {
           </Button>
         )}
         {!!project?.demo?.description && (
-          <p className="font-medium space-x-1 text-justify md:col-span-2 lg:col-span-1 md:-order-1 lg:order-0">
-            <TbDeviceDesktopShare className="text-2xl inline-block" />
-            <span className="font-semibold text-lg">Demo Description:</span>
-            <span>{project?.demo?.description}</span>
-          </p>
+          <DetailsSection
+            title="Demo Description"
+            className="md:col-span-2 lg:col-span-1 md:-order-1 lg:order-0"
+            icon={<TbDeviceDesktopShare />}
+            highlighterClass="bg-pink-200"
+          >
+            {project?.demo?.description}
+          </DetailsSection>
         )}
         {!!project?.demo?.url && (
           <Button
@@ -44,3 +51,24 @@ function SingleProjectDetails({ project = {} }) {
 }
 
 export default SingleProjectDetails;
+
+function DetailsSection({
+  icon,
+  className = "",
+  title = "",
+  highlighterClass = "",
+  children,
+}) {
+  return (
+    <div className={`space-y-1 font-medium text-justify ${className}`}>
+      <p className="flex items-center gap-1 [&_svg]:text-2xl">
+        {icon}
+        <span className="font-semibold relative font-caveat text-2xl">
+          {title}
+          <HighLighter className={highlighterClass} />
+        </span>
+      </p>
+      <span className="text-justify">{children}</span>
+    </div>
+  );
+}

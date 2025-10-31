@@ -16,14 +16,17 @@ import { useRef, useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import LighBoxZoom from "yet-another-react-lightbox/plugins/zoom";
-import SingleProjectHeader from "./SingleProjectHeader";
+import { Skeleton } from "../../ui/skeleton";
 
-function SingleProjectPics({ project = {} }) {
+function SingleProjectPics({ project = {}, loading = false }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [isLightBoxOpen, setIsLightBoxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const zoomLightboxRef = useRef(null);
-  const lightBoxSlides = project?.images?.map((img) => ({
+  const projectSlides = loading
+    ? Array.from({ length: 10 }).fill("")
+    : project?.images;
+  const lightBoxSlides = projectSlides?.map((img) => ({
     src: img,
     alt: project?.name,
   }));
@@ -47,24 +50,30 @@ function SingleProjectPics({ project = {} }) {
           thumbs={{ swiper: thumbsSwiper }}
           onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
         >
-          {project?.images?.map((pic, index) => (
+          {projectSlides?.map((pic, index) => (
             <SwiperSlide key={index}>
               <div className="w-full h-full swiper-zoom-container">
-                <Image
-                  className="object-contain z-1"
-                  src={pic || "/images/placeholder.jpg"}
-                  alt={project?.name}
-                  fill
-                  placeholder="blur"
-                  blurDataURL="/images/placeholder.jpg"
-                />
+                {loading ? (
+                  <Skeleton className="bg-stone-300 w-full h-full rounded-none" />
+                ) : (
+                  <Image
+                    className="object-contain z-1"
+                    src={pic || "/images/placeholder.jpg"}
+                    alt={project?.name}
+                    fill
+                    placeholder="blur"
+                    blurDataURL="/images/placeholder.jpg"
+                  />
+                )}
               </div>
             </SwiperSlide>
           ))}
-          <TbArrowsDiagonal
-            onClick={openLightBox}
-            className="absolute bottom-2 text-3xl right-2 z-2 bg-amber-200 rounded-sm p-0.5 border-2 hover:bg-green-200 transition-all duration-300 cursor-pointer"
-          />
+          {!loading && (
+            <TbArrowsDiagonal
+              onClick={openLightBox}
+              className="absolute bottom-2 text-3xl right-2 z-2 bg-amber-200 rounded-sm p-0.5 border-2 hover:bg-green-200 transition-all duration-300 cursor-pointer"
+            />
+          )}
         </Swiper>
       </div>
 
@@ -104,17 +113,21 @@ function SingleProjectPics({ project = {} }) {
             },
           }}
         >
-          {project?.images?.map((pic, index) => (
-            <SwiperSlide key={index}>
+          {projectSlides?.map((pic, index) => (
+            <SwiperSlide key={index} className="max-w-32">
               <div className="w-30 h-15 relative border-2 rounded overflow-hidden">
-                <Image
-                  className="object-cover brightness-90 active:brightness-100 hover:brightness-100 transition-all duration-300"
-                  src={pic || "/images/placeholder.jpg"}
-                  alt={project?.name}
-                  fill
-                  placeholder="blur"
-                  blurDataURL="/images/placeholder.jpg"
-                />
+                {loading ? (
+                  <Skeleton className="bg-stone-300 w-full h-full rounded-none" />
+                ) : (
+                  <Image
+                    className="object-cover brightness-90 active:brightness-100 hover:brightness-100 transition-all duration-300"
+                    src={pic || "/images/placeholder.jpg"}
+                    alt={project?.name}
+                    fill
+                    placeholder="blur"
+                    blurDataURL="/images/placeholder.jpg"
+                  />
+                )}
               </div>
             </SwiperSlide>
           ))}
@@ -126,14 +139,16 @@ function SingleProjectPics({ project = {} }) {
           <TbChevronRight />
         </button>
       </div>
-      <Lightbox
-        open={isLightBoxOpen}
-        close={() => setIsLightBoxOpen(false)}
-        slides={lightBoxSlides}
-        plugins={[LighBoxZoom]}
-        index={currentIndex}
-        zoom={{ ref: zoomLightboxRef }}
-      />
+      {!loading && (
+        <Lightbox
+          open={isLightBoxOpen}
+          close={() => setIsLightBoxOpen(false)}
+          slides={lightBoxSlides}
+          plugins={[LighBoxZoom]}
+          index={currentIndex}
+          zoom={{ ref: zoomLightboxRef }}
+        />
+      )}
     </div>
   );
 }

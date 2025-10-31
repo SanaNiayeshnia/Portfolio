@@ -24,6 +24,13 @@ function HomeCollaboration() {
       <Button withDoodle href={url} target="_blank" rel="noopener noreferrer">
         Send Me a Message
       </Button>
+      <Image
+        src="/images/avatar/5.png"
+        alt="avatar"
+        width="100"
+        height="100"
+        className="absolute -bottom-35 xs:-bottom-28 sm:-bottom-20 lg:-bottom-8 -left-5 md:-left-8"
+      />
     </div>
   );
 }

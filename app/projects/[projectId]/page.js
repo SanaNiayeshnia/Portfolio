@@ -3,6 +3,8 @@ import SingleProjectHeader from "@/app/_components/projects/singleProject/Single
 import SingleProjectPics from "@/app/_components/projects/singleProject/SingleProjectPics";
 import { getProject } from "@/app/_lib/data_services";
 
+export const revalidate = 3600;
+
 async function Project({ params }) {
   const { projectId } = await params;
   const project = await getProject(projectId);

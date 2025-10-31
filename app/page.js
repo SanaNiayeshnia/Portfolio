@@ -11,7 +11,14 @@ import { Suspense } from "react";
 
 export default function Home() {
   return (
-    <div className="md:pt-10">
+    <div className="-mt-15 md:pt-10">
+      <Image
+        src="/images/doodles/doodle19.png"
+        alt="doodle"
+        width="100"
+        height="100"
+        className="-ml-12 z-10"
+      />
       <HomeBio />
       <SkillsSlider />
       <HomeEducation />

@@ -1,10 +1,9 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCoverflow, Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
-import "swiper/css/effect-coverflow";
 
 import { TbChevronLeft, TbChevronRight } from "react-icons/tb";
 import ProjectCard from "../../projects/ProjectCard";
@@ -15,24 +14,16 @@ export default function PortfolioSlider({ projects = [], loading = false }) {
       <Swiper
         spaceBetween={2}
         slidesPerView={1}
-        modules={[Autoplay, Navigation, EffectCoverflow]}
+        modules={[Autoplay, Navigation]}
         autoplay={{
           delay: 3000,
           pauseOnMouseEnter: true,
         }}
-        effect="coverflow"
         navigation={{ nextEl: ".nextProject", prevEl: ".previousProject" }}
         loop
         breakpoints={{
           1024: {
             slidesPerView: 3,
-            coverflowEffect: {
-              depth: 100,
-              rotate: 50,
-              stretch: 0,
-              modifier: 1,
-              slideShadows: 0,
-            },
           },
           850: { slidesPerView: 2.8 },
           768: { slidesPerView: 2.5 },

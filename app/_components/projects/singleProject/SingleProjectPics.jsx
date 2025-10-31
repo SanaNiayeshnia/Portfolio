@@ -16,6 +16,7 @@ import { useRef, useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import LighBoxZoom from "yet-another-react-lightbox/plugins/zoom";
+import SingleProjectHeader from "./SingleProjectHeader";
 
 function SingleProjectPics({ project = {} }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -33,7 +34,7 @@ function SingleProjectPics({ project = {} }) {
 
   return (
     <div className="lg:sticky top-25 lg:w-2/3  space-y-4">
-      <div className="h-[400px]">
+      <div className="h-[200px] sm:h-[350px] md:h-[400px]">
         <Swiper
           spaceBetween={20}
           slidesPerView={1}
@@ -71,13 +72,37 @@ function SingleProjectPics({ project = {} }) {
         <Swiper
           onSwiper={setThumbsSwiper}
           spaceBetween={15}
-          slidesPerView={5}
+          slidesPerView={2}
           modules={[Navigation, Thumbs, FreeMode]}
           freeMode={true}
           watchSlidesProgress={true}
           loop
           navigation={{ nextEl: ".nextProject", prevEl: ".previousProject" }}
           className="h-full w-full overflow-hidden cursor-pointer shrink-0"
+          breakpoints={{
+            1280: {
+              slidesPerView: 5,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+
+            768: {
+              slidesPerView: 5,
+            },
+            600: {
+              slidesPerView: 4,
+            },
+            500: {
+              slidesPerView: 3.5,
+            },
+            450: {
+              slidesPerView: 3,
+            },
+            400: {
+              slidesPerView: 2.5,
+            },
+          }}
         >
           {project?.images?.map((pic, index) => (
             <SwiperSlide key={index}>

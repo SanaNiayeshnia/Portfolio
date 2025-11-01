@@ -1,11 +1,15 @@
+import { Suspense } from "react";
 import ProjectsHeader from "../_components/projects/ProjectsHeader";
 import ProjectsList from "../_components/projects/ProjectsList";
 
-function Projects() {
+async function Projects({ searchParams }) {
+  const sp = await searchParams;
   return (
     <div>
       <ProjectsHeader />
-      <ProjectsList />
+      <Suspense fallback={<ProjectsList loading />}>
+        <ProjectsList searchParams={sp} />
+      </Suspense>
     </div>
   );
 }

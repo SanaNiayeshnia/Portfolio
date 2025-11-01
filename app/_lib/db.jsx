@@ -149,3 +149,19 @@ export const randomFacts = [
   "I'm a Marvel fan. (Loki is my favorite character.)",
   "My dream job is to own a flower shop.",
 ];
+
+export const projectLanguages = [
+  { label: "English", value: "English" },
+  { label: "Persian", value: "Persian" },
+];
+
+export const projectTypes = [
+  { label: "Work-based", value: "work-based" },
+  { label: "Personal", value: "personal" },
+];
+
+export const projectScales = [
+  { label: "Simple", value: "simple" },
+  { label: "Average", value: "average" },
+  { label: "Advanced", value: "advanced" },
+];

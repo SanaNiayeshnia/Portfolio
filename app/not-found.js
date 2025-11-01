@@ -1,5 +1,5 @@
-import Button from "@/app/_components/ui/Button";
 import Image from "next/image";
+import Button from "./_components/ui/Button";
 
 function NotFound({ title = "Page" }) {
   return (

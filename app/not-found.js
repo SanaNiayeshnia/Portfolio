@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "./_components/ui/Button";
+import CustomButton from "./_components/ui/CustomButton";
 
 function NotFound({ title = "Page" }) {
   return (
@@ -27,9 +27,9 @@ function NotFound({ title = "Page" }) {
         <p className="font-caveat text-2xl font-semibold">
           but your curiosity is appreciated
         </p>
-        <Button href="/" className="mt-4" withDoodle>
+        <CustomButton href="/" className="mt-4" withDoodle>
           Go Home
-        </Button>
+        </CustomButton>
       </div>
     </div>
   );

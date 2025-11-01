@@ -1,5 +1,5 @@
 import { TbDeviceDesktopShare, TbSettings } from "react-icons/tb";
-import Button from "../../ui/Button";
+import CustomButton from "../../ui/CustomButton";
 import HighLighter from "../../ui/Highlighter";
 import { Skeleton } from "../../ui/skeleton";
 
@@ -27,14 +27,14 @@ function SingleProjectDetails({ project = {}, loading = false }) {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-y-3 gap-x-2">
         {!!project?.github && (
-          <Button
+          <CustomButton
             href={project?.github}
             target="_blank"
             className="!w-full text-center  md:order-1 lg:order-0"
             withDoodle
           >
             Source Code on GitHub
-          </Button>
+          </CustomButton>
         )}
         {!!project?.demo?.description && (
           <DetailsSection
@@ -47,14 +47,14 @@ function SingleProjectDetails({ project = {}, loading = false }) {
           </DetailsSection>
         )}
         {!!project?.demo?.url && (
-          <Button
+          <CustomButton
             href={project?.demo?.url}
             target="_blank"
             className="!w-full text-center"
             varient={project?.github ? "secondary" : "primary"}
           >
             See the Live Demo
-          </Button>
+          </CustomButton>
         )}
       </div>
     </div>

@@ -2,7 +2,7 @@ import Image from "next/image";
 import AboutRandomFacts from "../_components/about/AboutRandomFacts";
 import TimeLine from "../_components/ui/TimeLine";
 import { aboutContent } from "../_lib/db";
-import Button from "../_components/ui/Button";
+import CustomButton from "../_components/ui/CustomButton";
 import HighLighter from "../_components/ui/Highlighter";
 
 export const metadata = { title: "About" };
@@ -71,9 +71,9 @@ function About() {
               </span>
               . Haed back there where the serious stuff lives.
             </p>
-            <Button withDoodle className="md:self-end" href="/">
+            <CustomButton withDoodle className="md:self-end" href="/">
               Back to the serious stuff
-            </Button>
+            </CustomButton>
           </div>
         </div>
         <TimeLine items={aboutContent} />

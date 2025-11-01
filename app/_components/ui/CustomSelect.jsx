@@ -45,14 +45,18 @@ export function CustomSelect({
     <div className="relative">
       <label className="font-medium text-sm mb-1">{label}</label>
       <Select value={optimisticValue} onValueChange={changeFilter}>
-        <SelectTrigger className="w-[180px] bg-white border-2 rounded-full border-black">
+        <SelectTrigger className="w-[180px] bg-white cursor-pointer border-2 rounded-full border-black">
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
         <SelectContent className="border-2">
           <SelectGroup>
             <SelectLabel>{label}</SelectLabel>
             {options?.map((opt, index) => (
-              <SelectItem value={opt?.value} key={index}>
+              <SelectItem
+                value={opt?.value}
+                key={index}
+                className="cursor-pointer"
+              >
                 {opt?.label}
               </SelectItem>
             ))}

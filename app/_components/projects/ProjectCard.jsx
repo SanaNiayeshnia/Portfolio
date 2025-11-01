@@ -1,6 +1,6 @@
 import Image from "next/image";
-import ReferenceButton from "../ui/ReferenceButton";
 import { Skeleton } from "../ui/skeleton";
+import ReferenceButton from "../ui/ReferenceButton";
 
 function ProjectCard({ project = {}, loading = false }) {
   return (
@@ -68,6 +68,15 @@ function ProjectCard({ project = {}, loading = false }) {
                     }
                   >
                     {project?.scale}
+                  </Badge>
+                  <Badge
+                    className={`hidden min-[1150px]:block ${
+                      project?.language === "English"
+                        ? "bg-amber-200"
+                        : "bg-orange-200"
+                    }`}
+                  >
+                    {project?.language}
                   </Badge>
                 </>
               )}

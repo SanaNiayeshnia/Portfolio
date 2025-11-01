@@ -17,7 +17,7 @@ async function ProjectsList({ searchParams = {}, loading = false }) {
     <>
       {" "}
       {filteredProjects?.length > 0 || loading ? (
-        <div className="grid grid-cols-1 min-[570px]:grid-cols-2 min-[900px]:grid-cols-3 px-2 gap-y-2">
+        <div className="grid grid-cols-1 min-[570px]:grid-cols-2 min-[900px]:grid-cols-3 pb-5 px-2 gap-y-2">
           {filteredProjects?.map((project, index) => (
             <ProjectCard key={index} project={project} loading={loading} />
           ))}

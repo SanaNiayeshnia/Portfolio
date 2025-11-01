@@ -7,7 +7,10 @@ async function Projects({ searchParams }) {
   return (
     <div>
       <ProjectsHeader />
-      <Suspense fallback={<ProjectsList loading />}>
+      <Suspense
+        fallback={<ProjectsList loading />}
+        key={`${sp.type}-${sp?.language}-${sp?.scale}`}
+      >
         <ProjectsList searchParams={sp} />
       </Suspense>
     </div>

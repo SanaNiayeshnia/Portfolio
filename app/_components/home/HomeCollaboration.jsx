@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "../ui/Button";
+import CustomButton from "../ui/CustomButton";
 import { getGmailRedirectUrl } from "@/app/_lib/utils";
 
 function HomeCollaboration() {
@@ -21,9 +21,14 @@ function HomeCollaboration() {
         <span>From first paint to last pixel —</span>{" "}
         <span>speed and beauty, hand in hand.</span>
       </p>
-      <Button withDoodle href={url} target="_blank" rel="noopener noreferrer">
+      <CustomButton
+        withDoodle
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Send Me a Message
-      </Button>
+      </CustomButton>
       <Image
         src="/images/avatar/5.png"
         alt="avatar"

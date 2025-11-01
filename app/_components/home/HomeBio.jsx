@@ -1,6 +1,6 @@
 import Image from "next/image";
 import HighLighter from "../ui/Highlighter";
-import Button from "../ui/Button";
+import CustomButton from "../ui/CustomButton";
 
 function HomeBio() {
   return (
@@ -33,9 +33,9 @@ function HomeBio() {
           </span>
           .
         </p>
-        <Button href="/projects" withDoodle className="self-end">
+        <CustomButton href="/projects" withDoodle className="self-end">
           See My Projects
-        </Button>
+        </CustomButton>
       </div>
       <div className="size-80 xs:size-90 lg:size-95 relative shrink-0">
         <Image src="/images/doodles/doodle15.png" alt="wireframe" fill />

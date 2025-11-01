@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Button from "./_components/ui/Button";
+import CustomButton from "./_components/ui/CustomButton";
 
 export default function Error({ reset }) {
   return (
@@ -33,9 +33,9 @@ export default function Error({ reset }) {
         <p className="font-caveat text-2xl font-semibold">
           That wasn’t supposed to happen...
         </p>
-        <Button onClick={reset} className="mt-4" withDoodle>
+        <CustomButton onClick={reset} className="mt-4" withDoodle>
           Try Again
-        </Button>
+        </CustomButton>
       </div>
     </div>
   );

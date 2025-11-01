@@ -3,6 +3,7 @@ import "./globals.css";
 import Image from "next/image";
 import Navbar from "./_components/ui/navbar/Navbar";
 import Footer from "./_components/ui/Footer";
+import ScrollToTop from "./_components/ui/ScrollToTop";
 
 const grotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout({ children }) {
               height="100"
               className="absolute -top-8 -right-8 z-10 "
             />
+            <ScrollToTop />
             <div>{children}</div>
           </div>
         </main>

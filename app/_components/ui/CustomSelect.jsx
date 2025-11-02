@@ -9,7 +9,7 @@ import {
   SelectValue,
 } from "@/app/_components/ui/select";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useOptimistic } from "react";
+import { startTransition, useOptimistic, useTransition } from "react";
 import { TbX } from "react-icons/tb";
 
 export function CustomSelect({
@@ -28,14 +28,16 @@ export function CustomSelect({
   );
 
   function changeFilter(selectedValue) {
-    setOptimisticValue(selectedValue);
+    startTransition(() => setOptimisticValue(selectedValue));
+
     const sp = new URLSearchParams(searchParams);
     sp.set(filterName, selectedValue);
     router.replace(`${pathname}?${sp.toString()}`);
   }
 
   function removeFilter() {
-    setOptimisticValue("");
+    startTransition(() => setOptimisticValue(""));
+
     const sp = new URLSearchParams(searchParams);
     sp.delete(filterName);
     router.replace(`${pathname}?${sp.toString()}`);

@@ -1,14 +1,25 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import ProjectCard from "../ProjectCard";
+import { useProjectsContext } from "@/app/_contexts/ProjectsContextProvider";
 
-function ProjectListContent({ projects = [], loading = false }) {
+function ProjectListContent({ projects = [] }) {
+  const { technologies, setTechnologies } = useProjectsContext();
+  const filteredProjects = projects.filter((project) =>
+    technologies.every((tech) => project?.technologies?.includes(tech))
+  );
+
+  function removeSelectedTechnologies() {
+    setTechnologies([]);
+  }
+
   return (
     <div>
-      {projects?.length > 0 || loading ? (
+      {filteredProjects?.length > 0 ? (
         <div className="grid grid-cols-1 min-[570px]:grid-cols-2 min-[900px]:grid-cols-3 pb-5 px-2 gap-y-2">
-          {projects?.map((project, index) => (
-            <ProjectCard key={index} project={project} loading={loading} />
+          {filteredProjects?.map((project) => (
+            <ProjectCard key={project?.id} project={project} />
           ))}
         </div>
       ) : (
@@ -24,7 +35,8 @@ function ProjectListContent({ projects = [], loading = false }) {
           </p>
           <Link
             href="/projects"
-            className="rounded-full border-2 py-1 px-3 font-medium"
+            className="rounded-full border-2 py-1 px-3 font-medium hover:bg-amber-200 active:bg-amber-200 transition-all duration-300"
+            onClick={removeSelectedTechnologies}
           >
             Remove filters
           </Link>

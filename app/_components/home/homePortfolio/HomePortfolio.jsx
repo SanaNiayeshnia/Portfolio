@@ -7,7 +7,7 @@ import PortfolioSlider from "./PortfolioSlider";
 async function HomePortfolio({ loading = false }) {
   const projects = loading
     ? Array.from({ length: 3 }).fill({})
-    : await getProjects();
+    : await getProjects({});
 
   return (
     <section className="mt-30 sm:mt-20 ">

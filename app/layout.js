@@ -4,6 +4,8 @@ import Image from "next/image";
 import Navbar from "./_components/ui/navbar/Navbar";
 import Footer from "./_components/ui/Footer";
 import ScrollToTop from "./_components/ui/ScrollToTop";
+import CustomModal from "./_components/ui/CustomModal";
+import GlobalContextProvider from "./_contexts/GlobalContextProvider";
 
 const grotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -28,21 +30,24 @@ export default function RootLayout({ children }) {
       <body
         className={`${grotesk?.className} ${caveat?.variable} ${grotesk?.variable} bg-[#fefff0ee] antialiased `}
       >
-        <main className="max-w-7xl  bg-no-repeat bg-cover bg-[url(/images/bg-mobile.png)] sm:bg-[url(/images/bg.png)] xl:border-l-3 min-h-screen mx-auto h-full">
-          <Navbar />
-          <div className="overflow-x-hidden pt-20 xl:overflow-x-visible relative">
-            <Image
-              src="/images/doodles/doodle21.png"
-              alt="doodle"
-              width="100"
-              height="100"
-              className="absolute -top-8 -right-8 z-10 "
-            />
-            <ScrollToTop />
-            <div>{children}</div>
-          </div>
-        </main>
-        <Footer />
+        <GlobalContextProvider>
+          <main className="max-w-7xl  bg-no-repeat bg-cover bg-[url(/images/bg-mobile.png)] sm:bg-[url(/images/bg.png)] xl:border-l-3 min-h-screen mx-auto h-full">
+            <Navbar />
+            <div className="overflow-x-hidden pt-20 xl:overflow-x-visible relative">
+              <Image
+                src="/images/doodles/doodle21.png"
+                alt="doodle"
+                width="100"
+                height="100"
+                className="absolute -top-8 -right-8 z-10 "
+              />
+              <ScrollToTop />
+              <div>{children}</div>
+            </div>
+          </main>
+          <Footer />
+          <CustomModal />
+        </GlobalContextProvider>
       </body>
     </html>
   );

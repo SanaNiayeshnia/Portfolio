@@ -7,12 +7,19 @@ import {
   MultiSelectValue,
 } from "@/app/_components/ui/multi-select";
 
-function CustomMultiSelect({ label = "", placeholder = "", options = [] }) {
+function CustomMultiSelect({
+  label = "",
+  placeholder = "",
+  options = [],
+  className = "",
+}) {
   return (
     <div>
       <label className="text-sm font-medium">{label}</label>
       <MultiSelect>
-        <MultiSelectTrigger className="bg-white rounded-full border-2 border-black w-[250px]">
+        <MultiSelectTrigger
+          className={`bg-white rounded-full border-2 border-black w-full ${className}`}
+        >
           <MultiSelectValue
             placeholder={placeholder}
             overflowBehavior="cutoff"

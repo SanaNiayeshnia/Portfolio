@@ -1,24 +1,13 @@
-import { getProjects } from "@/app/_lib/data_services";
-import ProjectCard from "./ProjectCard";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import ProjectCard from "../ProjectCard";
 
-async function ProjectsList({ searchParams = {}, loading = false }) {
-  const projects = loading ? Array.from({ length: 12 }) : await getProjects();
-  const { scale, language, type } = searchParams;
-
-  const filteredProjects = projects?.filter((project) => {
-    const checkLanguage = language ? project?.language === language : true;
-    const checkType = type ? project?.type === type : true;
-    const checkScale = scale ? project?.scale === scale : true;
-    return checkLanguage && checkType && checkScale;
-  });
+function ProjectListContent({ projects = [], loading = false }) {
   return (
-    <>
-      {" "}
-      {filteredProjects?.length > 0 || loading ? (
+    <div>
+      {projects?.length > 0 || loading ? (
         <div className="grid grid-cols-1 min-[570px]:grid-cols-2 min-[900px]:grid-cols-3 pb-5 px-2 gap-y-2">
-          {filteredProjects?.map((project, index) => (
+          {projects?.map((project, index) => (
             <ProjectCard key={index} project={project} loading={loading} />
           ))}
         </div>
@@ -41,8 +30,8 @@ async function ProjectsList({ searchParams = {}, loading = false }) {
           </Link>
         </div>
       )}
-    </>
+    </div>
   );
 }
 
-export default ProjectsList;
+export default ProjectListContent;

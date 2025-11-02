@@ -1,10 +1,16 @@
 "use client";
 import Image from "next/image";
 import { CustomSelect } from "../ui/CustomSelect";
-import { projectLanguages, projectScales, projectTypes } from "@/app/_lib/db";
+import {
+  projectLanguages,
+  projectScales,
+  projectTechnologies,
+  projectTypes,
+} from "@/app/_lib/db";
 import CustomMultiSelect from "../ui/CustomMultiSelect";
 import { useGlobalContext } from "@/app/_contexts/GlobalContextProvider";
 import { TbAdjustmentsAlt } from "react-icons/tb";
+import { useProjectsContext } from "@/app/_contexts/ProjectsContextProvider";
 
 function ProjectsHeader() {
   const { openModal, closeModal } = useGlobalContext();
@@ -42,7 +48,13 @@ function ProjectsHeader() {
   );
 }
 
-ProjectsHeader.Filters = function filters({ className = "" }) {
+ProjectsHeader.Filters = function Filters({ className = "" }) {
+  const { setTechnologies, technologies } = useProjectsContext();
+
+  function onChangeTechnologies(newValues) {
+    setTechnologies(newValues);
+  }
+
   return (
     <div className={`flex flex-row items-center gap-2 self-end ${className}`}>
       <CustomSelect
@@ -65,8 +77,10 @@ ProjectsHeader.Filters = function filters({ className = "" }) {
       />
       <CustomMultiSelect
         label="Technologies"
-        options={projectTypes}
+        options={projectTechnologies}
         placeholder="Choose among technologies..."
+        onChange={onChangeTechnologies}
+        values={technologies}
       />
     </div>
   );

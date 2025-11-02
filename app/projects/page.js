@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import ProjectsHeader from "../_components/projects/ProjectsHeader";
-import ProjectsList from "../_components/projects/ProjectsList";
+import ProjectsList from "../_components/projects/projectsList/ProjectsList";
 
 async function Projects({ searchParams }) {
   const sp = await searchParams;

@@ -12,13 +12,15 @@ function CustomMultiSelect({
   placeholder = "",
   options = [],
   className = "",
+  values = [],
+  onChange,
 }) {
   return (
-    <div>
+    <div className="relative">
       <label className="text-sm font-medium">{label}</label>
-      <MultiSelect>
+      <MultiSelect values={values} onValuesChange={onChange}>
         <MultiSelectTrigger
-          className={`bg-white rounded-full border-2 border-black w-full ${className}`}
+          className={`bg-white rounded-full border-2 border-black w-[300px] ${className}`}
         >
           <MultiSelectValue
             placeholder={placeholder}

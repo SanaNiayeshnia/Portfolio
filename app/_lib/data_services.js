@@ -1,8 +1,15 @@
 import { notFound } from "next/navigation";
 import { supabase } from "./supabase";
 
-export async function getProjects() {
-  let { data: projects, error } = await supabase.from("projects").select("*");
+export async function getProjects({ language = "", type = "", scale = "" }) {
+  let query = supabase.from("projects").select("*");
+
+  if (language) query = query.eq("language", language);
+  if (type) query = query.eq("type", type);
+  if (scale) query = query.eq("scale", scale);
+
+  const { data: projects, error } = await query;
+
   if (error) {
     console.log("Error fetching projects:", error);
   }

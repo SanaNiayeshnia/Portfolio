@@ -12,7 +12,7 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  // Include ESLint’s recommended base config (enables no-undef)
+  // Include ESLint’s recommended base config
   js.configs.recommended,
 
   // Include Next.js recommended config
@@ -29,7 +29,14 @@ const eslintConfig = [
       },
     },
     rules: {
+      // Error on undefined variables
       "no-undef": "error",
+
+      // Warn (not error) for unused variables
+      "no-unused-vars": [
+        "warn",
+        { args: "after-used", ignoreRestSiblings: true },
+      ],
     },
     ignores: [
       "node_modules/**",

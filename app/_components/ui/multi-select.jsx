@@ -1,7 +1,7 @@
 "use client";
 import { CheckIcon, ChevronsUpDownIcon, XIcon } from "lucide-react";
 import { cn } from "@/app/_lib/utils";
-import { Button } from "@/app/_components/ui/buttonn";
+import { Button } from "@/app/_components/ui/button";
 import {
   Command,
   CommandEmpty,

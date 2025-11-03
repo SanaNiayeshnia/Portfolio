@@ -19,9 +19,8 @@ function SingleProjectHeader({ project = {}, loading = false }) {
           </>
         ) : (
           <>
-            {" "}
             <p className="font-medium flex items-center gap-1 text-stone-500 flex-wrap">
-              {!!project?.completionDate ? (
+              {project?.completionDate ? (
                 <>
                   Completed in
                   <span>

@@ -1,7 +1,6 @@
 "use client";
-import { CheckIcon, ChevronsUpDownIcon, XIcon } from "lucide-react"
-import { cn } from "@/app/_lib/utils"
-import { Button } from "@/app/_components/ui/button"
+import { CheckIcon, ChevronsUpDownIcon, XIcon } from "lucide-react";
+import { cn } from "@/app/_lib/utils";
 import {
   Command,
   CommandEmpty,
@@ -10,48 +9,58 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "@/app/_components/ui/command"
+} from "@/app/_components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/app/_components/ui/popover"
-import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
-import { Badge } from "@/app/_components/ui/badge"
+} from "@/app/_components/ui/popover";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import { Badge } from "@/app/_components/ui/badge";
+import { Button } from "./button";
 
-const MultiSelectContext = createContext(null)
+const MultiSelectContext = createContext(null);
 
 export function MultiSelect({
   children,
   values,
   defaultValues,
-  onValuesChange
+  onValuesChange,
 }) {
-  const [open, setOpen] = useState(false)
-  const [internalValues, setInternalValues] = useState(new Set(values ?? defaultValues))
-  const selectedValues = values ? new Set(values) : internalValues
-  const [items, setItems] = useState(new Map())
+  const [open, setOpen] = useState(false);
+  const [internalValues, setInternalValues] = useState(
+    new Set(values ?? defaultValues)
+  );
+  const selectedValues = values ? new Set(values) : internalValues;
+  const [items, setItems] = useState(new Map());
 
   function toggleValue(value) {
     const getNewSet = (prev) => {
-      const newSet = new Set(prev)
+      const newSet = new Set(prev);
       if (newSet.has(value)) {
-        newSet.delete(value)
+        newSet.delete(value);
       } else {
-        newSet.add(value)
+        newSet.add(value);
       }
-      return newSet
-    }
-    setInternalValues(getNewSet)
-    onValuesChange?.([...getNewSet(selectedValues)])
+      return newSet;
+    };
+    setInternalValues(getNewSet);
+    onValuesChange?.([...getNewSet(selectedValues)]);
   }
 
   const onItemAdded = useCallback((value, label) => {
-    setItems(prev => {
-      if (prev.get(value) === label) return prev
+    setItems((prev) => {
+      if (prev.get(value) === label) return prev;
       return new Map(prev).set(value, label);
-    })
-  }, [])
+    });
+  }, []);
 
   return (
     <MultiSelectContext
@@ -62,7 +71,8 @@ export function MultiSelect({
         toggleValue,
         items,
         onItemAdded,
-      }}>
+      }}
+    >
       <Popover open={open} onOpenChange={setOpen} modal={true}>
         {children}
       </Popover>
@@ -70,12 +80,8 @@ export function MultiSelect({
   );
 }
 
-export function MultiSelectTrigger({
-  className,
-  children,
-  ...props
-}) {
-  const { open } = useMultiSelectContext()
+export function MultiSelectTrigger({ className, children, ...props }) {
+  const { open } = useMultiSelectContext();
 
   return (
     <PopoverTrigger asChild>
@@ -87,7 +93,8 @@ export function MultiSelectTrigger({
         className={cn(
           "flex h-auto min-h-9 w-fit items-center justify-between gap-2 overflow-hidden rounded-md border border-input bg-transparent px-3 py-1.5 text-sm whitespace-nowrap shadow-xs transition-[color,box-shadow] outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 data-[placeholder]:text-muted-foreground dark:bg-input/30 dark:hover:bg-input/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-foreground",
           className
-        )}>
+        )}
+      >
         {children}
         <ChevronsUpDownIcon className="size-4 shrink-0 opacity-50" />
       </Button>
@@ -102,48 +109,51 @@ export function MultiSelectValue({
   overflowBehavior = "wrap-when-open",
   ...props
 }) {
-  const { selectedValues, toggleValue, items, open } = useMultiSelectContext()
-  const [overflowAmount, setOverflowAmount] = useState(0)
-  const valueRef = useRef(null)
-  const overflowRef = useRef(null)
+  const { selectedValues, toggleValue, items, open } = useMultiSelectContext();
+  const [overflowAmount, setOverflowAmount] = useState(0);
+  const valueRef = useRef(null);
+  const overflowRef = useRef(null);
 
   const shouldWrap =
     overflowBehavior === "wrap" ||
-    (overflowBehavior === "wrap-when-open" && open)
+    (overflowBehavior === "wrap-when-open" && open);
 
   const checkOverflow = useCallback(() => {
-    if (valueRef.current == null) return
+    if (valueRef.current == null) return;
 
-    const containerElement = valueRef.current
-    const overflowElement = overflowRef.current
-    const items = containerElement.querySelectorAll("[data-selected-item]")
+    const containerElement = valueRef.current;
+    const overflowElement = overflowRef.current;
+    const items = containerElement.querySelectorAll("[data-selected-item]");
 
-    if (overflowElement != null) overflowElement.style.display = "none"
-    items.forEach(child => child.style.removeProperty("display"))
-    let amount = 0
+    if (overflowElement != null) overflowElement.style.display = "none";
+    items.forEach((child) => child.style.removeProperty("display"));
+    let amount = 0;
     for (let i = items.length - 1; i >= 0; i--) {
-      const child = items[i]
+      const child = items[i];
       if (containerElement.scrollWidth <= containerElement.clientWidth) {
-        break
+        break;
       }
-      amount = items.length - i
-      child.style.display = "none"
-      overflowElement?.style.removeProperty("display")
+      amount = items.length - i;
+      child.style.display = "none";
+      overflowElement?.style.removeProperty("display");
     }
-    setOverflowAmount(amount)
-  }, [])
+    setOverflowAmount(amount);
+  }, []);
 
-  const handleResize = useCallback((node) => {
-    valueRef.current = node
+  const handleResize = useCallback(
+    (node) => {
+      valueRef.current = node;
 
-    const observer = new ResizeObserver(checkOverflow)
-    observer.observe(node)
+      const observer = new ResizeObserver(checkOverflow);
+      observer.observe(node);
 
-    return () => {
-      observer.disconnect()
-      valueRef.current = null
-    };
-  }, [checkOverflow])
+      return () => {
+        observer.disconnect();
+        valueRef.current = null;
+      };
+    },
+    [checkOverflow]
+  );
 
   if (selectedValues.size === 0 && placeholder) {
     return (
@@ -161,10 +171,11 @@ export function MultiSelectValue({
         "flex w-fit gap-1.5 overflow-hidden",
         shouldWrap && "h-full flex-wrap",
         className
-      )}>
+      )}
+    >
       {[...selectedValues]
-        .filter(value => items.has(value))
-        .map(value => (
+        .filter((value) => items.has(value))
+        .map((value) => (
           <Badge
             variant="outline"
             data-selected-item
@@ -172,12 +183,13 @@ export function MultiSelectValue({
             key={value}
             onClick={
               clickToRemove
-                ? e => {
-                    e.stopPropagation()
-                    toggleValue(value)
+                ? (e) => {
+                    e.stopPropagation();
+                    toggleValue(value);
                   }
                 : undefined
-            }>
+            }
+          >
             {items.get(value)}
             {clickToRemove && (
               <XIcon className="size-2 text-muted-foreground group-hover:text-destructive" />
@@ -189,19 +201,16 @@ export function MultiSelectValue({
           display: overflowAmount > 0 && !shouldWrap ? "block" : "none",
         }}
         variant="outline"
-        ref={overflowRef}>
+        ref={overflowRef}
+      >
         +{overflowAmount}
       </Badge>
     </div>
   );
 }
 
-export function MultiSelectContent({
-  search = true,
-  children,
-  ...props
-}) {
-  const canSearch = typeof search === "object" ? true : search
+export function MultiSelectContent({ search = true, children, ...props }) {
+  const canSearch = typeof search === "object" ? true : search;
 
   return (
     <>
@@ -216,7 +225,8 @@ export function MultiSelectContent({
             <CommandInput
               placeholder={
                 typeof search === "object" ? search.placeholder : undefined
-              } />
+              }
+            />
           ) : (
             <button autoFocus className="sr-only" />
           )}
@@ -241,42 +251,43 @@ export function MultiSelectItem({
   onSelect,
   ...props
 }) {
-  const { toggleValue, selectedValues, onItemAdded } = useMultiSelectContext()
-  const isSelected = selectedValues.has(value)
+  const { toggleValue, selectedValues, onItemAdded } = useMultiSelectContext();
+  const isSelected = selectedValues.has(value);
 
   useEffect(() => {
-    onItemAdded(value, badgeLabel ?? children)
-  }, [value, children, onItemAdded, badgeLabel])
+    onItemAdded(value, badgeLabel ?? children);
+  }, [value, children, onItemAdded, badgeLabel]);
 
   return (
     <CommandItem
       {...props}
       onSelect={() => {
-        toggleValue(value)
-        onSelect?.(value)
-      }}>
-      <CheckIcon className={cn("mr-2 size-4", isSelected ? "opacity-100" : "opacity-0")} />
+        toggleValue(value);
+        onSelect?.(value);
+      }}
+    >
+      <CheckIcon
+        className={cn("mr-2 size-4", isSelected ? "opacity-100" : "opacity-0")}
+      />
       {children}
     </CommandItem>
   );
 }
 
-export function MultiSelectGroup(
-  props,
-) {
+export function MultiSelectGroup(props) {
   return <CommandGroup {...props} />;
 }
 
-export function MultiSelectSeparator(
-  props,
-) {
+export function MultiSelectSeparator(props) {
   return <CommandSeparator {...props} />;
 }
 
 function useMultiSelectContext() {
-  const context = useContext(MultiSelectContext)
+  const context = useContext(MultiSelectContext);
   if (context == null) {
-    throw new Error("useMultiSelectContext must be used within a MultiSelectContext")
+    throw new Error(
+      "useMultiSelectContext must be used within a MultiSelectContext"
+    );
   }
-  return context
+  return context;
 }

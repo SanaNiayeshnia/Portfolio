@@ -14,12 +14,14 @@ export default function ReferenceButton({
   className = "",
   target = "_self",
   children,
+  ...rest
 }) {
   return (
     <Link
       target={target}
       href={href}
       className={`text-2xl flex items-center gap-2 bg-black border-2 border-black rounded active:bg-amber-200 active:text-black hover:bg-amber-200 hover:text-black  transition-all duration-300 text-white shadow-strict ${className}`}
+      {...rest}
     >
       <TbArrowUpRight />
       {children}

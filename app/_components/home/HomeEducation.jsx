@@ -18,9 +18,9 @@ export default function HomeEducation() {
           />
         </div>
         <div className="border-4 rotate-3 md:w-max bg-white p-4 shadow-strict">
-          <h4 className="font-semibold text-xl mb-0.5">
+          <h3 className="font-semibold text-xl mb-0.5">
             Bachelor of Professional Computer Engineering
-          </h4>
+          </h3>
           <p className="font-medium">
             Technical and Vocation University of Shariaty
           </p>
@@ -32,7 +32,7 @@ export default function HomeEducation() {
         <div className="border-4 -rotate-7 md:w-max bg-white p-4 shadow-strict max-w-96 space-y-3">
           {languages?.map((lang, index) => (
             <div key={index}>
-              <h4 className="font-semibold text-xl mb-0.5">{lang?.name}</h4>
+              <h3 className="font-semibold text-xl mb-0.5">{lang?.name}</h3>
               <p className="font-medium">{lang?.description}</p>
             </div>
           ))}

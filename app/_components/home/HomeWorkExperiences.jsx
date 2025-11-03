@@ -39,14 +39,14 @@ async function HomeWorkExperiences({ loading = false }) {
               ) : (
                 <>
                   {" "}
-                  <h5 className="mb-1 text-justify flex flex-col sm:items-center sm:flex-row sm:gap-2">
+                  <h3 className="mb-1 text-justify flex flex-col sm:items-center sm:flex-row sm:gap-2">
                     <span className="text-sm sm:text-lg font-medium">
                       {experience?.position} at
                     </span>
                     <span className={`font-bold text-xl`}>
                       {experience?.company}
                     </span>
-                  </h5>
+                  </h3>
                   <p className="font-medium text-justify">
                     {experience?.description}
                   </p>
@@ -72,6 +72,7 @@ async function HomeWorkExperiences({ loading = false }) {
               alt="doodle"
               width="35"
               height="35"
+              loading="lazy"
             />
             <Image
               src="/images/doodles/doodle26.png"
@@ -79,6 +80,7 @@ async function HomeWorkExperiences({ loading = false }) {
               width="90"
               height="30"
               className="-mt-8"
+              loading="lazy"
             />
           </div>
           <h2 className="text-5xl mt-5 lg:mt-0 font-caveat w-max font-semibold gap-2 bg-pink-200 md:bg-transparent md:[&_span]:bg-pink-200 flex md:flex-col items-start">
@@ -91,6 +93,7 @@ async function HomeWorkExperiences({ loading = false }) {
             width="50"
             height="50"
             className="rotate-90"
+            loading="lazy"
           />
         </div>
       </div>

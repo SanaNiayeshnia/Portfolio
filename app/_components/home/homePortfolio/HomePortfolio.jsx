@@ -12,14 +12,15 @@ async function HomePortfolio({ loading = false }) {
   return (
     <section className="mt-30 sm:mt-20 ">
       <div className="flex items-center gap-4 justify-center mb-5">
-        <div className="flex gap-2 text-4xl md:text-5xl font-bold px-5 md:px-10">
+        <h2 className="flex gap-2 text-4xl md:text-5xl font-bold px-5 md:px-10">
           My <Underline>Portfolio</Underline>
-        </div>
+        </h2>
         <Image
           src="/images/doodles/doodle6.png"
           alt="doodle"
           width="100"
           height="100"
+          loading="lazy"
         />
       </div>
       <PortfolioSlider projects={projects} loading={loading} />

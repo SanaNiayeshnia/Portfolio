@@ -26,7 +26,10 @@ function Navbar() {
         <NavItems />
       </div>
       <Sheet open={open} onOpenChange={setOpen}>
-        <SheetTrigger className="sm:hidden p-2 cursor-pointer group">
+        <SheetTrigger
+          className="sm:hidden p-2 cursor-pointer group"
+          aria-label="Trigger menu"
+        >
           <TbMenu2 className="text-2xl group-hover:scale-110 transition-all duration-300 group-active:scale-110" />
         </SheetTrigger>
         <SheetContent className="border-none">

@@ -5,7 +5,13 @@ import ReferenceButton from "../ui/ReferenceButton";
 function ProjectCard({ project = {}, loading = false }) {
   return (
     <div className="aspect-square flex flex-col gap-3 px-10 py-9 group relative min-w-40">
-      <Image fill alt="doodle" src="/images/doodles/doodle14.png" />
+      <Image
+        fill
+        alt="doodle"
+        src="/images/doodles/doodle14.png"
+        placeholder="empty"
+        fetchPriority="high"
+      />
       <div className="z-1 flex flex-col gap-4 justify-center min-h-full">
         <div className="relative min-h-40 xl:min-h-45 border-3 overflow-hidden">
           {loading ? (

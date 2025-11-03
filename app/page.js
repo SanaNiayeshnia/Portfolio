@@ -44,6 +44,7 @@ export default function Home() {
           width="200"
           height="100"
           className="rotate-30"
+          loading="lazy"
         />
       </div>
     </div>

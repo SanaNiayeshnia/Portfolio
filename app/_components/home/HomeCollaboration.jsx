@@ -12,11 +12,12 @@ function HomeCollaboration() {
         width="100"
         height="100"
         className="absolute -top-10 right-1/10"
+        loading="lazy"
       />
-      <h3 className="text-4xl font-semibold flex-wrap text-center flex items-center gap-2 flex-col sm:flex-row">
+      <h2 className="text-4xl font-semibold flex-wrap text-center flex items-center gap-2 flex-col sm:flex-row">
         <span>Let’s make your</span>
         <span>project fly</span>
-      </h3>
+      </h2>
       <p className="font-medium text-center flex items-center gap-2 flex-col flex-wrap sm:flex-row">
         <span>From first paint to last pixel —</span>{" "}
         <span>speed and beauty, hand in hand.</span>
@@ -36,6 +37,7 @@ function HomeCollaboration() {
         width="100"
         height="100"
         className="absolute -bottom-35 xs:-bottom-28 sm:-bottom-20 lg:-bottom-8 -left-5 md:-left-8"
+        loading="lazy"
       />
     </div>
   );

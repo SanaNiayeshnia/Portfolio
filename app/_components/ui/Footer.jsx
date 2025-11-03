@@ -7,8 +7,13 @@ export default function Footer() {
     {
       icon: <SiLinkedin />,
       href: "https://www.linkedin.com/in/sana-niayeshnia",
+      name: "LinkedIn",
     },
-    { icon: <SiGithub />, href: "https://github.com/SanaNiayeshnia" },
+    {
+      icon: <SiGithub />,
+      href: "https://github.com/SanaNiayeshnia",
+      name: "Github",
+    },
   ];
 
   return (
@@ -25,6 +30,7 @@ export default function Footer() {
               href={socialMedia?.href}
               className="transition-all duration-300 hover:scale-110"
               target="blank"
+              aria-label={`Link to ${socialMedia?.name}`}
             >
               {socialMedia?.icon}
             </Link>

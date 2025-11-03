@@ -12,8 +12,9 @@ function HomeBio() {
           width="100"
           height="100"
           className="self-end"
+          placeholder="empty"
         />
-        <h2 className="text-4xl font-semibold ">Sana Niayeshnia</h2>
+        <h1 className="text-4xl font-semibold ">Sana Niayeshnia</h1>
         <p className="text-justify text-lg font-medium mb-5">
           A{" "}
           <span className="relative">
@@ -42,13 +43,20 @@ function HomeBio() {
           See My Projects
         </CustomButton>
       </div>
-      <div className="size-80 xs:size-90 lg:size-95 relative shrink-0">
-        <Image src="/images/doodles/doodle15.png" alt="wireframe" fill />
+      <div className="w-80 xs:w-90 lg:w-95 aspect-[95/100] relative shrink-0">
         <Image
-          src="/images/avatar/2.jpg"
+          src="/images/doodles/doodle15.png"
           alt="wireframe"
           fill
+          fetchPriority="high"
+          sizes="360"
+        />
+        <Image
+          src="/images/avatar/2.png"
+          alt="avatar"
+          fill
           className="object-contain"
+          fetchPriority="high"
         />
         <Image
           src="/images/doodles/doodle1.png"
@@ -56,6 +64,7 @@ function HomeBio() {
           height="65"
           className="absolute top-20 -left-0"
           alt="doodle"
+          placeholder="empty"
         />
         <Image
           src="/images/doodles/doodle18.png"
@@ -63,6 +72,7 @@ function HomeBio() {
           height="100"
           className="absolute bottom-0 right-0"
           alt="doodle"
+          placeholder="empty"
         />
       </div>
     </section>

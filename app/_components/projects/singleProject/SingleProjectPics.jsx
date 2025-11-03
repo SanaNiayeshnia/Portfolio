@@ -132,10 +132,16 @@ function SingleProjectPics({ project = {}, loading = false }) {
             </SwiperSlide>
           ))}
         </Swiper>
-        <button className="previousProject  absolute top-1/2 z-2 left-0  text-xl -translate-y-1/2 ">
+        <button
+          aria-label="Previous project"
+          className="previousProject  absolute top-1/2 z-2 left-0  text-xl -translate-y-1/2 "
+        >
           <TbChevronLeft />
         </button>
-        <button className="nextProject absolute top-1/2 z-2 right-0  text-xl -translate-y-1/2">
+        <button
+          aria-label="Next project"
+          className="nextProject absolute top-1/2 z-2 right-0  text-xl -translate-y-1/2"
+        >
           <TbChevronRight />
         </button>
       </div>

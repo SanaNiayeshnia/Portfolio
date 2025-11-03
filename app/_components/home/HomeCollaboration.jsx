@@ -26,6 +26,7 @@ function HomeCollaboration() {
         href={url}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Send a message"
       >
         Send Me a Message
       </CustomButton>

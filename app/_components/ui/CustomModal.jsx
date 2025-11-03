@@ -31,6 +31,7 @@ export default function CustomModal() {
             {modal?.cancel && (
               <DialogClose asChild>
                 <Button
+                  aria-label="cancel"
                   variant="outline"
                   onClick={modal?.cancel?.handler}
                   className="cursor-pointer"
@@ -41,6 +42,7 @@ export default function CustomModal() {
             )}
             {modal?.submit && (
               <Button
+                aria-label="submit"
                 type="submit"
                 onClick={modal?.submit?.handler}
                 className="cursor-pointer"

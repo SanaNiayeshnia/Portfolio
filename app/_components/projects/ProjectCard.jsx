@@ -39,7 +39,10 @@ function ProjectCard({ project = {}, loading = false }) {
                   <h3 className="text-lg font-semibold line-clamp-1">
                     {project?.name}
                   </h3>
-                  <ReferenceButton href={`projects/${project?.id}`} />
+                  <ReferenceButton
+                    href={`projects/${project?.id}`}
+                    aria-label={`Link to ${project?.name}`}
+                  />
                 </>
               )}
             </div>

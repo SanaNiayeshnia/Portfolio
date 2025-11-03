@@ -27,7 +27,7 @@ function NotFound({ title = "Page" }) {
         <p className="font-caveat text-2xl font-semibold">
           but your curiosity is appreciated
         </p>
-        <CustomButton href="/" className="mt-4" withDoodle>
+        <CustomButton href="/" className="mt-4" withDoodle aria-label="Go-home">
           Go Home
         </CustomButton>
       </div>

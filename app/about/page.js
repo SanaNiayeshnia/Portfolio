@@ -71,7 +71,12 @@ function About() {
               </span>
               . Haed back there where the serious stuff lives.
             </p>
-            <CustomButton withDoodle className="md:self-end" href="/">
+            <CustomButton
+              withDoodle
+              className="md:self-end"
+              href="/"
+              aria-label="Back to home"
+            >
               Back to the serious stuff
             </CustomButton>
           </div>

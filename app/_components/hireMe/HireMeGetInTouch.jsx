@@ -41,6 +41,7 @@ function HireMeGetInTouch() {
                 href={method?.link}
                 className="hover:gap-4 active:gap-4"
                 target="_blank"
+                aria-label={`Link to ${method?.label}`}
               >
                 <method.icon className="text-base mr-1" />
               </ReferenceButton>

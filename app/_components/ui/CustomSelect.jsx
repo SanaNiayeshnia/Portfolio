@@ -67,6 +67,7 @@ export function CustomSelect({
       </Select>
       {!!optimisticValue && (
         <button
+          aria-label="Remove filter"
           className="absolute bottom-2.5 right-8 rounded-full text-sm cursor-pointer bg-black text-white border-2 hover:bg-amber-200 hover:text-black transition-all duration-300"
           onClick={removeFilter}
         >

@@ -37,6 +37,7 @@ function ProjectsHeader() {
           <ProjectsHeader.Filters />
         </div>
         <button
+          aria-label="filters"
           onClick={openFilterModal}
           className="lg:hidden border-2 bg-white rounded-full px-3 py-2 text-sm font-medium flex items-center gap-1 cursor-pointer hover:bg-amber-200 transition-all duration-300 active:bg-amber-200"
         >

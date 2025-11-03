@@ -33,7 +33,12 @@ export default function Error({ reset }) {
         <p className="font-caveat text-2xl font-semibold">
           That wasn’t supposed to happen...
         </p>
-        <CustomButton onClick={reset} className="mt-4" withDoodle>
+        <CustomButton
+          onClick={reset}
+          className="mt-4"
+          withDoodle
+          aria-label="Try again"
+        >
           Try Again
         </CustomButton>
       </div>

@@ -42,10 +42,16 @@ export default function PortfolioSlider({ projects = [], loading = false }) {
         ))}
       </Swiper>
 
-      <button className="previousProject absolute top-1/2 z-1 left-3 md:left-8 text-3xl -translate-y-1/2">
+      <button
+        className="previousProject absolute top-1/2 z-1 left-3 md:left-8 text-3xl -translate-y-1/2"
+        aria-label="Previous project"
+      >
         <TbChevronLeft />
       </button>
-      <button className="nextProject absolute top-1/2 z-1 right-3 md:right-8 text-3xl -translate-y-1/2">
+      <button
+        className="nextProject absolute top-1/2 z-1 right-3 md:right-8 text-3xl -translate-y-1/2"
+        aria-label="Next project"
+      >
         <TbChevronRight />
       </button>
     </div>

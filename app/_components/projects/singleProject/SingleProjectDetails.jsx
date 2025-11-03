@@ -32,6 +32,7 @@ function SingleProjectDetails({ project = {}, loading = false }) {
             target="_blank"
             className="!w-full text-center  md:order-1 lg:order-0"
             withDoodle
+            aria-label="link to github"
           >
             Source Code on GitHub
           </CustomButton>

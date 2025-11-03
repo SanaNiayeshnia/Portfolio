@@ -33,7 +33,12 @@ function HomeBio() {
           </span>
           .
         </p>
-        <CustomButton href="/projects" withDoodle className="self-end">
+        <CustomButton
+          href="/projects"
+          withDoodle
+          className="self-end"
+          aria-label="See projects"
+        >
           See My Projects
         </CustomButton>
       </div>

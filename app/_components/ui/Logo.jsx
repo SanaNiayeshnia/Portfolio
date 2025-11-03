@@ -13,7 +13,7 @@ function Logo({ className = "" }) {
         width="30"
         height="30"
       />
-      <span className="font-semibold text-xl">Sana's Portfolio</span>
+      <span className="font-semibold text-xl">Sana&apos;s Portfolio</span>
     </Link>
   );
 }

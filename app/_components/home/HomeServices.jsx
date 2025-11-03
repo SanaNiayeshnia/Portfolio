@@ -83,7 +83,7 @@ function HomeServices() {
     >
       <div className="flex items-center  gap-3 sm:max-w-96 ">
         <h2 className="font-semibold text-5xl font-caveat">
-          Services I'm providing that derive 99% result
+          Services I&apos;m providing that derive 99% result
         </h2>
         <Image
           src="/images/doodles/doodle7.png"

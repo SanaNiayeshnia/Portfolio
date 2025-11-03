@@ -36,7 +36,7 @@ function Navbar() {
           <SheetHeader>
             <SheetTitle className="text-lg">
               <Link href="/" onClick={closeSheet}>
-                Sana's Portfolio
+                Sana&apos;s Portfolio
               </Link>
             </SheetTitle>
           </SheetHeader>

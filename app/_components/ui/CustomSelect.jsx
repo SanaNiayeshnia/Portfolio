@@ -9,7 +9,7 @@ import {
   SelectValue,
 } from "@/app/_components/ui/select";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { startTransition, useOptimistic, useTransition } from "react";
+import { startTransition, useOptimistic } from "react";
 import { TbX } from "react-icons/tb";
 
 export function CustomSelect({

@@ -5,6 +5,15 @@ import { getProject } from "@/app/_lib/data_services";
 
 export const revalidate = 3600;
 
+export const generateMetadata = async ({ params }) => {
+  const { projectId } = await params;
+  const project = await getProject(projectId);
+  return {
+    title: project?.name,
+    description: `A project called ${project?.name} by Sana Niayeshnia.`,
+  };
+};
+
 async function Project({ params }) {
   const { projectId } = await params;
   const project = await getProject(projectId);

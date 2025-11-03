@@ -3,7 +3,11 @@ import HireMeGetInTouch from "../_components/hireMe/HireMeGetInTouch";
 import HireMeIntro from "../_components/hireMe/HireMeIntro";
 import Underline from "../_components/ui/Underline";
 
-export const metadata = { title: "Hire Me" };
+export const metadata = {
+  title: "Hire Me",
+  description:
+    "A Hire-Me page that provides some methods to contact Sana Niayeshnia.",
+};
 
 function HireMe() {
   return (

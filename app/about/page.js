@@ -5,7 +5,11 @@ import { aboutContent } from "../_lib/db";
 import CustomButton from "../_components/ui/CustomButton";
 import HighLighter from "../_components/ui/Highlighter";
 
-export const metadata = { title: "About" };
+export const metadata = {
+  title: "About",
+  description:
+    "An about page that tell us about Sana Niayeshnia career and her journey to become a front-end developer.",
+};
 
 function About() {
   return (

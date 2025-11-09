@@ -43,16 +43,9 @@ function HomeBio() {
           See My Projects
         </CustomButton>
       </div>
-      <div className="w-80 xs:w-90 lg:w-95 aspect-[95/100] relative shrink-0">
+      <div className="w-80 xs:w-90 lg:w-95 aspect-square relative shrink-0">
         <Image
-          src="/images/doodles/doodle15.png"
-          alt="wireframe"
-          fill
-          fetchPriority="high"
-          sizes="360"
-        />
-        <Image
-          src="/images/avatar/2.png"
+          src="/images/avatar/SANA.png"
           alt="avatar"
           fill
           className="object-contain"

@@ -52,7 +52,7 @@ function SingleProjectDetails({ project = {}, loading = false }) {
             href={project?.demo?.url}
             target="_blank"
             className="!w-full text-center"
-            varient={project?.github ? "secondary" : "primary"}
+            variant={project?.github ? "secondary" : "primary"}
           >
             See the Live Demo
           </CustomButton>

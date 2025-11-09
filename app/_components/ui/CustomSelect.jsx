@@ -47,7 +47,10 @@ export function CustomSelect({
     <div className="relative">
       <label className="font-medium text-sm mb-1">{label}</label>
       <Select value={optimisticValue} onValueChange={changeFilter}>
-        <SelectTrigger className="w-full min-w-[180px] bg-white cursor-pointer border-2 rounded-full border-black">
+        <SelectTrigger
+          className="w-full min-w-[180px] bg-white cursor-pointer border-2 rounded-full border-black"
+          aria-label="Select trigger"
+        >
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
         <SelectContent className="border-2">

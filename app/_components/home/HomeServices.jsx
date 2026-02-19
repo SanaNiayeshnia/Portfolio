@@ -102,7 +102,7 @@ function HomeServices() {
       />
       <div className="border-t-3 border-3 md:border-x-0 md:border-b-0 grid grid-cols-1 md:grid-cols-[0.5fr_1fr_1fr] grid-rows-4 divide-y-3">
         <div className="px-4 py-6 md:border-b-3">
-          <h3 className="font-semibold text-xl">39</h3>
+          <h3 className="font-semibold text-xl">10</h3>
           <p className="font-medium">projects</p>
         </div>
         <div className="md:row-start-2 md:-row-end-1 px-4 py-6 md:border-b-3">

@@ -56,7 +56,12 @@ async function HomeWorkExperiences({ loading = false }) {
                       "MMMM YYYY (jMMMM jYYYY)"
                     )}{" "}
                     -{" "}
-                    {formatDate(experience?.endDate, "MMMM YYYY (jMMMM jYYYY)")}
+                    {experience?.stillWorking
+                      ? "now"
+                      : formatDate(
+                          experience?.endDate,
+                          "MMMM YYYY (jMMMM jYYYY)"
+                        )}
                   </p>
                 </>
               )}
@@ -64,7 +69,7 @@ async function HomeWorkExperiences({ loading = false }) {
           </div>
         ))}
       </BorderFrame>
-      <div className="flex-grow md:py-[31px]">
+      <div className="flex-grow md:py-[39px]">
         <div className="flex flex-col items-center md:items-stretch justify-center md:border-y-3 border-t-transparent h-full">
           <div className="flex gap-2 items-center justify-center">
             <Image

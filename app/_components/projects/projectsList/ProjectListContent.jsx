@@ -6,7 +6,7 @@ import { useProjectsContext } from "@/app/_contexts/ProjectsContextProvider";
 
 function ProjectListContent({ projects = [] }) {
   const { technologies, setTechnologies } = useProjectsContext();
-  const filteredProjects = projects.filter((project) =>
+  const filteredProjects = projects?.filter((project) =>
     technologies.every((tech) => project?.technologies?.includes(tech))
   );
 

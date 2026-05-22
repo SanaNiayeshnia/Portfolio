@@ -25,10 +25,14 @@ function SingleProjectPics({ project = {}, loading = false }) {
   const zoomLightboxRef = useRef(null);
   const projectSlides = loading
     ? Array.from({ length: 10 }).fill("")
-    : project?.images;
+    : project?.images || [
+        "/images/placeholder.jpg",
+        "/images/placeholder.jpg",
+        "/images/placeholder.jpg",
+      ];
   const lightBoxSlides = projectSlides?.map((img) => ({
     src: img,
-    alt: project?.name,
+    alt: project?.name || "place-holder",
   }));
 
   function openLightBox() {
@@ -36,7 +40,7 @@ function SingleProjectPics({ project = {}, loading = false }) {
   }
 
   return (
-    <div className="lg:sticky top-25 lg:w-2/3  space-y-4">
+    <div className="lg:sticky top-25 lg:w-2/3 shrink-0 space-y-4">
       <div className="h-[200px] sm:h-[350px] md:h-[400px]">
         <Swiper
           spaceBetween={20}

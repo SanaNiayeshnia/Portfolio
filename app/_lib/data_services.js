@@ -8,7 +8,9 @@ export async function getProjects({ language = "", type = "", scale = "" }) {
   if (type) query = query.eq("type", type);
   if (scale) query = query.eq("scale", scale);
 
-  const { data: projects, error } = await query;
+  const { data: projects, error } = await query
+    .order("scale")
+    .order("type", { ascending: false });
 
   if (error) {
     console.log("Error fetching projects:", error);

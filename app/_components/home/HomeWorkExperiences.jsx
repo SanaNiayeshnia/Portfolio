@@ -39,11 +39,11 @@ async function HomeWorkExperiences({ loading = false }) {
               ) : (
                 <>
                   {" "}
-                  <h3 className="mb-1 flex flex-col sm:items-center sm:flex-row sm:gap-2">
-                    <span className="text-sm sm:text-lg font-medium">
+                  <h3 className="mb-1 flex flex-col sm:items-center sm:flex-row sm:gap-2 ">
+                    <span className="text-sm sm:text-lg font-medium text-pretty leading-6">
                       {experience?.position} at
                     </span>
-                    <span className={`font-bold text-xl`}>
+                    <span className={`font-bold text-xl text-pretty leading-6`}>
                       {experience?.company}
                     </span>
                   </h3>
@@ -69,7 +69,7 @@ async function HomeWorkExperiences({ loading = false }) {
           </div>
         ))}
       </BorderFrame>
-      <div className="flex-grow md:py-[39px]">
+      <div className={`flex-grow  md:py-[36px] lg:py-[40px]`}>
         <div className="flex flex-col items-center md:items-stretch justify-center md:border-y-3 border-t-transparent h-full">
           <div className="flex gap-2 items-center justify-center">
             <Image

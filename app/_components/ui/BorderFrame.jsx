@@ -12,7 +12,7 @@ function BorderFrame({
 }) {
   return (
     <div
-      className={`sm:grid grid-cols-[0.5fr_10fr_0.5fr] grid-rows-[0.8fr_10fr_0.8fr] divide-2 divide-black md:w-9/12 xl:w-3/5 sm:min-h-[450px] shrink-0 ${className}`}
+      className={`sm:grid grid-cols-[0.5fr_10fr_0.5fr] grid-rows-[30px_10fr_30px] md:grid-rows-[36px_10fr_36px] lg:grid-rows-[40px_10fr_40px] divide-2 divide-black md:w-9/12 xl:w-3/5 sm:min-h-[450px] shrink-0 ${className}`}
     >
       <div className="border-r-3 border-b-3 -mr-0.5 -mb-[2.5px] hidden sm:block"></div>
       <div></div>

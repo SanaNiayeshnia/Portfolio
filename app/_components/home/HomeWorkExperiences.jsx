@@ -39,7 +39,7 @@ async function HomeWorkExperiences({ loading = false }) {
               ) : (
                 <>
                   {" "}
-                  <h3 className="mb-1 text-justify flex flex-col sm:items-center sm:flex-row sm:gap-2">
+                  <h3 className="mb-1 flex flex-col sm:items-center sm:flex-row sm:gap-2">
                     <span className="text-sm sm:text-lg font-medium">
                       {experience?.position} at
                     </span>

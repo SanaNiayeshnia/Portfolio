@@ -1,8 +1,13 @@
 import { formatDate } from "@/app/_lib/utils";
 import { Badge } from "../ProjectCard";
 import { Skeleton } from "../../ui/skeleton";
+import { projectLanguages } from "@/app/_lib/db";
 
 function SingleProjectHeader({ project = {}, loading = false }) {
+  const langColorClass = projectLanguages?.find(
+    (lang) => lang.value === project?.language
+  )?.colorClass;
+
   return (
     <div className="space-y-1">
       {loading ? (
@@ -58,15 +63,7 @@ function SingleProjectHeader({ project = {}, loading = false }) {
               >
                 {project?.scale} level
               </Badge>
-              <Badge
-                className={
-                  project?.language === "English"
-                    ? "bg-amber-200"
-                    : "bg-orange-200"
-                }
-              >
-                {project?.language}
-              </Badge>
+              <Badge className={langColorClass}>{project?.language}</Badge>
             </div>
           </>
         )}

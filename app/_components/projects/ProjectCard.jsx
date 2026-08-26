@@ -1,8 +1,13 @@
 import Image from "next/image";
 import { Skeleton } from "../ui/skeleton";
 import ReferenceButton from "../ui/ReferenceButton";
+import { projectLanguages } from "@/app/_lib/db";
 
 function ProjectCard({ project = {}, loading = false }) {
+  const langColorClass = projectLanguages?.find(
+    (lang) => lang.value === project?.language
+  )?.colorClass;
+
   return (
     <div className="aspect-square flex flex-col gap-3 px-10 py-9 group relative min-w-40">
       <Image
@@ -79,11 +84,7 @@ function ProjectCard({ project = {}, loading = false }) {
                     {project?.scale}
                   </Badge>
                   <Badge
-                    className={`hidden min-[1150px]:block ${
-                      project?.language === "English"
-                        ? "bg-amber-200"
-                        : "bg-orange-200"
-                    }`}
+                    className={`hidden min-[1150px]:block ${langColorClass}`}
                   >
                     {project?.language}
                   </Badge>

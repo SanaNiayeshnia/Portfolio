@@ -90,8 +90,13 @@ export const randomFacts = [
 ];
 
 export const projectLanguages = [
-  { label: "English", value: "English" },
-  { label: "Persian", value: "Persian" },
+  { label: "English", value: "English", colorClass: "bg-amber-200" },
+  { label: "Persian", value: "Persian", colorClass: "bg-orange-200" },
+  {
+    label: "Multilingual",
+    value: "Multilingual",
+    colorClass: "bg-lime-200",
+  },
 ];
 
 export const projectTypes = [
@@ -151,4 +156,7 @@ export const projectTechnologies = [
   { label: "Socket.io", value: "Socket.io" },
   { label: "HLS.js", value: "HLS.js" },
   { label: "Yet-Another-React-Lightbox", value: "Yet-Another-React-Lightbox" },
+  { label: "React-i18next", value: "React-i18next" },
+  { label: "Framer-Motion", value: "Framer-Motion" },
+  { label: "Resend", value: "Resend" },
 ];

@@ -118,7 +118,7 @@ function SingleProjectPics({ project = {}, loading = false }) {
           }}
         >
           {projectSlides?.map((pic, index) => (
-            <SwiperSlide key={index} className="max-w-32">
+            <SwiperSlide key={index} className="max-w-full">
               <div className="w-30 h-15 relative border-2 rounded overflow-hidden">
                 {loading ? (
                   <Skeleton className="bg-stone-300 w-full h-full rounded-none" />
